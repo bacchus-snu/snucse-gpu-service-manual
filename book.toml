@@ -1,0 +1,12 @@
+[book]
+authors = ["Bacchus"]
+language = "ko"
+multilingual = false
+src = "src"
+title = "SNUCSE GPU 서비스 매뉴얼"
+
+[preprocessor.gettext]
+after = ["links"]
+
+[build]
+extra-watch-dirs = ["po"]

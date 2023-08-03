@@ -1,0 +1,22 @@
+
+msgid ""
+msgstr ""
+"Project-Id-Version: SNUCSE GPU 서비스 매뉴얼\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ko\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/SUMMARY.md:3
+msgid "1장"
+msgstr ""
+
+#: src/chapter_1.md:1
+msgid "# 1장"
+msgstr ""
+

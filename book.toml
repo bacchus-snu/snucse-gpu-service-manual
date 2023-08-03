@@ -10,3 +10,6 @@ after = ["links"]
 
 [build]
 extra-watch-dirs = ["po"]
+
+[output.html]
+site-url = "/snucse-gpu-service-manual/"

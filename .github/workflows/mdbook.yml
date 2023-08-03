@@ -48,7 +48,7 @@ jobs:
       - name: Build in English
         run: |
           MDBOOK_BOOK__LANGUAGE=en \
-          MDBOOK_OUTPUT__HTML__SITE_URL=/snucse-gpu-service-manual/en/ \
+          MDBOOK_OUTPUT__HTML__SITE_URL=/en/ \
           mdbook build -d book/en
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2

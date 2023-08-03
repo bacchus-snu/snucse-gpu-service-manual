@@ -13,4 +13,3 @@ extra-watch-dirs = ["po"]
 
 [output.html]
 additional-css = ["theme/language-picker.css"]
-site-url = "/snucse-gpu-service-manual/"

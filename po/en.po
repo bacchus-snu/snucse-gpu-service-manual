@@ -5,16 +5,187 @@ msgstr ""
 "PO-Revision-Date: 2023-08-03 12:15+0900\n"
 "Last-Translator:  <contact@bacchus.snucse.org>\n"
 "Language-Team: English\n"
+"Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: en\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: src/SUMMARY.md:3
-msgid "1장"
-msgstr "Chapter 1"
+msgid "SNUCSE GPU 서비스"
+msgstr ""
 
-#: src/chapter_1.md:1
-msgid "# 1장"
-msgstr "# Chapter 1"
+#: src/SUMMARY.md:7
+msgid "서버 정보"
+msgstr ""
+
+#: src/SUMMARY.md:9
+msgid "서버 목록"
+msgstr ""
+
+#: src/SUMMARY.md:10
+msgid "MiG (Multi-Instance GPU)"
+msgstr ""
+
+#: src/SUMMARY.md:12
+msgid "서버 접근 방법"
+msgstr ""
+
+#: src/SUMMARY.md:14
+msgid "kubectl 설치 및 설정"
+msgstr ""
+
+#: src/SUMMARY.md:15
+msgid "SNUCSE ID 연동"
+msgstr ""
+
+#: src/SUMMARY.md:17
+msgid "서버 이용 방법"
+msgstr ""
+
+#: src/SUMMARY.md:19
+msgid "컨테이너 실행"
+msgstr ""
+
+#: src/SUMMARY.md:20
+msgid "퍼시스턴트 볼륨 설정"
+msgstr ""
+
+#: src/SUMMARY.md:21
+msgid "이미지 레지스트리 이용"
+msgstr ""
+
+#: src/SUMMARY.md:22
+msgid "사용자 할당량 설정"
+msgstr ""
+
+#: src/SUMMARY.md:23
+msgid "워크플로우 예시"
+msgstr ""
+
+#: src/SUMMARY.md:27
+msgid "개발팀"
+msgstr ""
+
+#: src/intro.md:1
+msgid "# SNUCSE GPU 서비스"
+msgstr ""
+
+#: src/intro.md:3
+msgid "bacchus"
+msgstr ""
+
+#: src/intro.md:5
+msgid ""
+"안녕하세요, 여러분과 함께하는 서울대학교 컴퓨터공학부 서버 관리자 모임 바쿠스"
+"입니다."
+msgstr ""
+
+#: src/intro.md:7
+msgid "바쿠스에서는 컴퓨터공학부 구성원들에게 GPU 서버를 제공하고 있습니다."
+msgstr ""
+
+#: src/intro.md:9
+msgid ""
+"학부에 새롭게 도입된 **A100 GPU** 서버를 무료로 이용하실 분들은 이 매뉴얼을 "
+"읽어주시길 바랍니다.\n"
+"기존 **GTX 1080 GPU** 서버를 이용하실 분들은 [바쿠스 홈페이지](https://"
+"bacchus.snucse.org/) 내 GPU 서버 계정 신청 안내를 참고해주시길 바랍니다."
+msgstr ""
+
+#: src/servers.md:1
+msgid "# 서버 목록"
+msgstr ""
+
+#: src/servers.md:3
+msgid "이용 가능한 서버는 다음과 같습니다."
+msgstr ""
+
+#: src/servers.md:5
+msgid ""
+"| 서버명                  | GPU                       | vCPU | 메모리  | GPU "
+"P2P  | 스토리지 |\n"
+"|:---------------------- |:------------------------- |:---- |:------ "
+"|:-------- |:------- |\n"
+"| ferrari<br/>(DGX A100) | 8 x A100<br/>(80GB HBM2E) | 256  | 1024GB | "
+"NVSwitch | 7.68TB  |\n"
+"| bentley<br/>(HGX A100) | 8 x A100<br/>(40GB HBM2)  | 256  | 1024GB | "
+"NVSwitch | 15.36TB |"
+msgstr ""
+
+#: src/servers.md:10
+msgid "추가로 해당 서버가 도입될 예정입니다."
+msgstr ""
+
+#: src/servers.md:12
+msgid ""
+"| 서버명                  | GPU                       | vCPU | 메모리  | GPU "
+"P2P  | 스토리지 |\n"
+"|:---------------------- |:------------------------- |:---- |:------ "
+"|:-------- |:------- |\n"
+"| ford<br/>(HGX A100)    | 4 x A100<br/>(80GB HBM2E) | 64   | 768GB  | "
+"NVLink   | 7.68TB  |"
+msgstr ""
+
+#: src/servers.md:16
+msgid ""
+"해당 서버들은 현재 기술적인 문제로, GPUDirect RDMA 및 GPUDirect Storage가 지"
+"원되지 않습니다. 이는 추후 지원될 예정입니다."
+msgstr ""
+
+#: src/mig.md:1
+msgid "# MiG (Multi-Instance GPU)"
+msgstr ""
+
+#: src/mig.md:3
+msgid ""
+"A100 GPU는 MiG 기술을 사용하여 최대 7개의 GPU로 쪼개어 사용할 수 있습니다. \n"
+"이를 활용하여 학부생 및 대학원생의 사용 목적에 맞게 아래와 같이 MiG가 설정된 "
+"상태입니다."
+msgstr ""
+
+#: src/mig.md:6
+msgid ""
+"| 서버명   | 인스턴스 구성 | 용도           |\n"
+"|:------- |:----------- |:-------------- |\n"
+"| ferrari | 56 x 10GB   | 전체 구성원 공용 | \n"
+"| bentley | 8 x 40GB    | 대학원생 연구용  |"
+msgstr ""
+
+#: src/mig.md:11
+msgid ""
+"바쿠스는 구성원들의 사용 형태를 지속적으로 모니터링하며, 이에 따라 서버별 "
+"MiG 구성이 조정될 수 있습니다."
+msgstr ""
+
+#: src/kubectl.md:1
+msgid "# kubectl 설치 및 설정"
+msgstr ""
+
+#: src/id.md:1
+msgid "# SNUCSE ID 연동"
+msgstr ""
+
+#: src/container.md:1
+msgid "# 컨테이너 실행"
+msgstr ""
+
+#: src/volume.md:1
+msgid "# 퍼시스턴트 볼륨 설정"
+msgstr ""
+
+#: src/registry.md:1
+msgid "# 이미지 레지스트리 이용"
+msgstr ""
+
+#: src/quota.md:1
+msgid "# 사용자 할당량 설정"
+msgstr ""
+
+#: src/example.md:1
+msgid "# 워크플로우 예시"
+msgstr ""
+
+#: src/developers.md:1
+msgid "# 개발팀"
+msgstr ""

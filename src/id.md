@@ -1,0 +1,1 @@
+# SNUCSE ID 연동

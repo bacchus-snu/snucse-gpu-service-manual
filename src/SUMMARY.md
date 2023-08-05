@@ -12,7 +12,8 @@
 # 서버 접근 방법
 
 - [kubectl 설치 및 설정](./kubectl.md)
-- [SNUCSE ID 연동](./id.md)
+- [kubelogin 설치 및 설정](./kubelogin.md)
+- [컨텍스트 설정 및 테스트](./context.md)
 
 # 서버 이용 방법
 

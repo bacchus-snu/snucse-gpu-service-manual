@@ -29,7 +29,13 @@ bacchus   4h37m
 
 ## 할당량 신청
 
-아래 구글 폼을 통해 CPU, 메모리, GPU, 스토리지 등 필요한 자원 할당량을 작성하여 제출합니다.
+할당될 자원 목록은 다음과 같습니다. (ephemeral-storage 제한은 추후 지원 예정)
+- cpu
+- memory
+- gpu
+- storage
+
+아래 구글 폼을 통해 필요한 자원 할당량을 작성하여 제출합니다.
 
 <https://docs.google.com/forms/u/2/d/1NZnb3B38pVA4CHbN2W78EuJoW5TXQC_hRKYCzPDtEOc/edit?usp=drive_web>
 

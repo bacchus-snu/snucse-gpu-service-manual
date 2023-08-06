@@ -1,9 +1,0 @@
-name: Cache Rust packages
-
-description: Configure the rust-cache workflow.
-
-runs:
-  using: composite
-  steps:
-    - name: Cache Rust packages
-      uses: Swatinem/rust-cache@v2

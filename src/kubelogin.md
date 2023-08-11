@@ -6,11 +6,13 @@ SNUCSE GPU 서비스는 SNUCSE ID <https://id.snucse.org/>와 연동되어 운�
 
 <https://github.com/int128/kubelogin>
 
-`Homebrew`, `Krew`, `Chocolatey`를 통해 설치할 수 있으며, 해당 패키지 매니저가 없을 시 추가 설치가 필요합니다. (`Krew` 설치 매뉴얼 <https://krew.sigs.k8s.io/docs/user-guide/setup/install/>)
+링크 내 매뉴얼에 따르면 `Homebrew`, `Krew`, `Chocolatey`를 통해 설치할 수 있으며, 해당 패키지 매니저가 없을 시 추가 설치가 필요합니다. 일반적인 리눅스 환경에서는 `Krew`를 통한 설치를 권장합니다. `Krew`의 설치 매뉴얼 링크는 아래와 같습니다.
+
+<https://krew.sigs.k8s.io/docs/user-guide/setup/install/>
 
 ## 유저 등록
 
-SNUCSE ID를 서버 접근을 위한 유저로 등록해야 합니다. 명령어는 다음과 같습니다. 유저를 원하는 이름으로 붙일 수 있습니다. (e.g. oidc)
+SNUCSE ID를 서버 접근을 위한 유저로 등록해야 합니다. 명령어는 다음과 같습니다. 유저를 원하는 이름으로 붙일 수 있습니다. (아래 예시에서 `oidc`)
 
 ```sh
 $ kubectl config set-credentials oidc \
@@ -18,7 +20,7 @@ $ kubectl config set-credentials oidc \
   --exec-command=kubectl \
   --exec-arg=oidc-login \
   --exec-arg=get-token \
-  --exec-arg=--oidc-issuer-url=https://id-dev.bacchus.io/o \
-  --exec-arg=--oidc-client-id=snucse-gpu-service \
-  --exec-arg=--oidc-client-secret=snucse-gpu-service
+  --exec-arg=--oidc-issuer-url=https://id.snucse.org/o \
+  --exec-arg=--oidc-client-id=kubernetes-oidc \
+  --exec-arg=--oidc-client-secret=kubernetes-oidc
 ```

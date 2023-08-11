@@ -2,13 +2,13 @@
 
 ## 컨텍스트 등록
 
-앞선 과정을 통해 클러스터와 유저가 등록됐으므로 이 둘을 묶어 컨텍스트로 등록합니다. 이때 네임스페이스는 SNUCSE ID 유저 이름을 사용합니다. SNUCSE ID 유저 이름은 <https://id.snucse.org/>에 로그인하여 확인할 수 있습니다. SNUCSE ID 계정이 없으면 가입을 먼저 해주시기 바랍니다. 이전에 `kubectl config set-credentials`로 등록한 유저 이름과 혼동하지 않도록 주의해야 합니다.
+앞선 과정을 통해 클러스터와 유저가 등록됐으므로 이 둘을 묶어 컨텍스트로 등록합니다. 이때 네임스페이스를 같이 지정해주어야 하는데, SNUCSE ID와 연동하여 특정 유저가 본인의 유저명에 해당하는 네임스페이스에서만 작업하도록 강제합니다. 따라서 SNUCSE ID 상 유저명을 네임스페이스로 설정합니다. SNUCSE ID 유저명은 <https://id.snucse.org/>에 로그인하여 확인할 수 있습니다. SNUCSE ID 계정이 없으면 가입을 먼저 해주시기 바랍니다. 이전에 `kubectl config set-credentials`에서 등록한 유저 (e.g. `oidc`)와 혼동하지 않도록 주의합니다.
 
-아래는 클러스터 이름이 ferrari, 유저 이름이 oidc, SNUCSE ID 유저명이 bacchus일 때의 예시입니다.
+아래는 클러스터가 `bentley`, 유저가 `oidc`, SNUCSE ID 유저명이 `bacchus`일 때 컨텍스트를 `bentley-oidc`로 등록하는 예시입니다.
 
 ```sh
-$ kubectl config set-context ferrari-oidc \
-  --cluster=ferrari \
+$ kubectl config set-context bentley-oidc \
+  --cluster=bentley \
   --user=oidc \
   --namespace=bacchus
 ```
@@ -18,7 +18,8 @@ $ kubectl config set-context ferrari-oidc \
 여러 서버들을 컨텍스트로 등록하여 이용할 수 있습니다. 이 경우 다음과 같은 방식으로 컨텍스트를 변경할 수 있습니다.
 
 ```sh
-$ kubectl config use-context bentley-oidc  # bentley-oidc가 컨텍스트로 등록되어 있을 시
+# ferrari-oidc가 컨텍스트로 등록되어 있을 시 가능
+$ kubectl config use-context ferrari-oidc
 ```
 
 ## 테스트

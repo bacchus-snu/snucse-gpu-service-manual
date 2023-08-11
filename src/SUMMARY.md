@@ -1,13 +1,13 @@
 # Summary
 
-[SNUCSE GPU 서비스](./intro.md)
+[SNUCSE GPU 서비스](./introduction.md)
 
 ---
 
-# 서버 정보
+# 운영 안내
 
 - [서버 목록](./servers.md)
-- [MiG (Multi-Instance GPU)](./mig.md)
+- [사용자 안내](./users.md)
 
 # 서버 접근 방법
 
@@ -17,7 +17,7 @@
 
 # 서버 이용 방법
 
-- [자원 할당량 설정](./quota.md)   
+- [리소스 쿼터 설정](./quota.md)   
 - [컨테이너 실행](./container.md)
 - [퍼시스턴트 볼륨 설정](./volume.md)
 - [이미지 레지스트리 이용](./registry.md)

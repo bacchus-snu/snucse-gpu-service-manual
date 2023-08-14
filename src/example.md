@@ -49,11 +49,12 @@ RUN git clone https://github.com/facebookresearch/llama.git
 RUN cd llama && pip install -e .
 ```
 
-해당 빌드는 로컬에 보관할 수도 있고, 제공한 Harbor 레지스트리에 보관할 수도 있습니다. Harbor에 올려서 사용하는 시나리오를 예로 들겠습니다.
+해당 빌드는 로컬에 보관할 수도 있고, 제공한 Harbor 레지스트리에 보관할 수도 있습니다. 제공한 레지스트리를 이용할 경우 서버의 로컬 스토리지에 이미지가 저장되므로 컨테이너 실행 시 이미지를 고속으로 pull할 수 있습니다. Harbor에 올려서 사용하는 시나리오를 예로 들겠습니다.
 
 ```sh
-$ docker build -t bacchus/llama:latest - < Dockerfile
-TODO: harbor image push 하기
+# https://registry.ferrari.snucse.org:30443 에 bacchus라는 project가 있다고 가정
+$ docker build -t registry.ferrari.snucse.org:30443/bacchus/llama:latest - < Dockerfile
+$ docker push registry.ferrari.snucse.org:30443/bacchus/llama:latest
 ```
 
 ## 모델 파라미터 다운로드
@@ -69,7 +70,7 @@ spec:
 
   containers:
   - name: llama-2-70b-container
-    image: "TODO: harbor image 경로"
+    image: "registry.ferrari.snucse.org:30443/bacchus/llama:latest"
     command: ["/bin/bash"]
     args: ["-c", "cd /data; echo '$URL_FROM_EMAIL\n$MODELS_TO_DOWNLOAD' | /llama/download.sh;"]
     resources:
@@ -104,6 +105,17 @@ $ kubectl delete pods llama-2-70b-download
 pod "llama-2-70b-download" deleted
 ```
 
+위와 같이 데이터셋 및 모델 weight를 준비할 때 소수의 CPU만 할당하여 준비하시기 바랍니다.
+스크립트를 한번에 짜서 준비하는 게 어려울 경우
+
+```yaml
+    command: [ "/bin/bash", "-c", "--" ]
+    args: [ "while true; do sleep 30; done;" ]
+```
+
+와 같이 무한루프를 제출하고 `kubectl exec`으로 접속하여 퍼시스턴트 볼륨 내 데이터를 준비할 수 있습니다.
+세팅이 끝나면 반드시 해당 pod을 삭제해주시기 바랍니다.
+
 ## 테스트 실행
 
 ```yaml
@@ -117,7 +129,7 @@ spec:
 
   containers:
   - name: llama-2-70b-container
-    image: "TODO: harbor image 경로"
+    image: "registry.ferrari.snucse.org:30443/bacchus/llama:latest"
     command: ["torchrun"]
     args: ["--nproc_per_node", "8", "/llama/example_text_completion.py", \
         "--ckpt_dir", "llama-2-70b", "--tokenizer_path", "tokenizer.model", \
@@ -141,6 +153,8 @@ $ kubectl apply -f llama-2-70b-run.yaml
 pod/llama-2-70b-run created
 ```
 
-## 그밖에
+## 기타
 
-새로운 소스코드를 작성하거나 데이터셋을 다운로드 받는 경우 경로를 `/data` 내부로 하여 데이터 손실을 방지하는 게 바람직합니다. 새로운 pip 패키지 등을 추가로 설치해야 하는 경우 이미지를 빌드한 후 레지스트리에 저장하는 게 좋습니다. 퍼시스턴트 볼륨으로 파일을 보내거나 꺼내야 하는 경우 `kubectl cp`를 사용하면 됩니다. (`kubectl cp --help` 참고) 다만 이 경우 퍼시스턴트 볼륨이 pod과 붙어 있어야 하므로 무한루프를 걸어 소수의 vCPU와 함께 Pod을 띄운 후 데이터 전송 작업을 할 필요가 있습니다. (작업 완료 후 반드시 Pod 삭제 요망)
+소스코드를 수정하거나 패키지를 추가 설치해야 하는 등의 경우 이미지를 다시 빌드한 후 레지스트리에 push해야 합니다. 이미지 빌드 시에는 Dockerfile을 작성하거나 `docker commit`을 이용하면 됩니다. 연구 특성상 소스코드 수정 후 실행을 자주 반복해야 하는 경우가 많습니다. 이때 이미지 레이어가 캐싱되는 것을 고려하지 않은 채 빌드하게 되면 매번 큰 양의 데이터가 네트워크를 통해 전송되게 되므로 수정 후 실행 주기가 길어질 수밖에 없습니다. 이미지 레이어 캐싱을 고려해서 빌드해주시기 바랍니다. 소스코드를 Github에 올린 후 Github Action과 Github Packages를 이용하여 이미지를 자동 빌드하는 방법도 좋습니다. 
+
+퍼시스턴트 볼륨으로 파일을 보내거나 꺼내야 하는 경우 `kubectl cp`를 사용하면 됩니다. (`kubectl cp --help` 참고) 이때 퍼시스턴트 볼륨이 pod과 붙어 있어야 하므로 무한루프를 걸어 소수의 vCPU와 함께 Pod을 띄운 후 데이터를 주고 받으면 됩니다.

@@ -4,8 +4,8 @@
 
 | 서버명                  | GPU                       | vCPU | 메모리  | GPU P2P  | 스토리지 |
 |:---------------------- |:------------------------- |:---- |:------ |:-------- |:------- |
-| ferrari<br/>(DGX A100) | 8 x A100<br/>(80GB HBM2E) | 256  | 1024GB | NVSwitch | 7.68TB  |
-| bentley<br/>(HGX A100) | 8 x A100<br/>(40GB HBM2)  | 256  | 1024GB | NVSwitch | 15.36TB |
+| ferrari<br/>(HGX A100) | 8 x A100<br/>(80GB HBM2E) | 256  | 1024GB | NVSwitch | 7.68TB  |
+| bentley<br/>(DGX A100) | 8 x A100<br/>(40GB HBM2)  | 256  | 1024GB | NVSwitch | 15.36TB |
 
 ## 도입 예정 서버
 

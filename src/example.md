@@ -21,7 +21,6 @@ apiVersion: v1
 metadata:
   name: llama-2-70b-pvc
 spec:
-  storageClassName: openebs-zfspv
   accessModes:
     - ReadWriteOnce
   resources:

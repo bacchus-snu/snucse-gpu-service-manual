@@ -72,7 +72,7 @@ spec:
   - name: llama-2-70b-container
     image: "registry.ferrari.snucse.org:30443/bacchus/llama:latest"
     command: ["/bin/bash"]
-    args: ["-c", "cd /data; echo '$URL_FROM_EMAIL\n$MODELS_TO_DOWNLOAD' | /llama/download.sh;"]
+    args: ["-c", "cd /data; echo \"$URL_FROM_EMAIL\n$MODELS_TO_DOWNLOAD\" | /llama/download.sh;"]
     resources:
       requests:
         cpu: 4

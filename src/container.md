@@ -18,12 +18,14 @@ spec:
     command: ["echo"]
     args: ["Hello, world!"]
     resources:
-      requests:
+      limits:
         cpu: 2
         memory: "1Gi"
 ```
 
 위 예시는 Pod을 기술한 것으로 `nginx:latest` 이미지를 pull하여 `echo "Hello, world!"` 명령어를 수행한 후 종료됩니다. Pod 뿐만 아니라 Deployment, StatefulSet, Job 등 다양한 Kubernetes 워크로드들을 모두 작성하여 실행할 수 있습니다. 자세한 건 사항은 <https://kubernetes.io/docs/concepts/workloads/>를 참고하시기 바랍니다.
+
+주의하실 점은, 기본적으로 모든 유저들에 대해서 Resource Quota가 적용되어 있기 때문에, 요청할 리소스를 정확히 기술해주셔야 합니다. Request와 Limit이 모두 Quota로 제한이 되어 있기 때문에, 위 예시처럼 `limits`만 적어주거나, `requests`와 `limits`를 둘 다 적어주셔야 합니다. Quota에 대한 내용은 [이 문서](./quota.md)를 확인해주시길 바랍니다.
 
 ## 실행 및 확인
 

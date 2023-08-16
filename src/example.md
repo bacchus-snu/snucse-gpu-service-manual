@@ -74,7 +74,7 @@ spec:
     command: ["/bin/bash"]
     args: ["-c", "cd /data; echo \"$URL_FROM_EMAIL\n$MODELS_TO_DOWNLOAD\" | /llama/download.sh;"]
     resources:
-      requests:
+      limits:
         cpu: 4
         memory: "1Gi"
     volumeMounts:
@@ -135,7 +135,7 @@ spec:
         "--ckpt_dir", "llama-2-70b", "--tokenizer_path", "tokenizer.model", \
         "--max_seq_len 128", "--max_batch_size", "4"]
     resources:
-      requests:
+      limits:
         cpu: 256
         memory: "1000Gi"
         nvidia.com/gpu: 8

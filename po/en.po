@@ -13,31 +13,31 @@ msgstr ""
 
 #: src/SUMMARY.md:3 src/introduction.md:1
 msgid "SNUCSE GPU 서비스"
-msgstr ""
+msgstr "SNUCSE GPU SERVICE"
 
 #: src/SUMMARY.md:7
 msgid "운영 안내"
-msgstr ""
+msgstr "Operation Guidelines"
 
 #: src/SUMMARY.md:9 src/servers.md:1
 msgid "서버 목록"
-msgstr ""
+msgstr "Server List"
 
 #: src/SUMMARY.md:10 src/users.md:1
 msgid "사용자 안내"
-msgstr ""
+msgstr "User Guidelines"
 
 #: src/SUMMARY.md:12
 msgid "서버 접근 방법"
-msgstr ""
+msgstr "How to Access the Server"
 
 #: src/SUMMARY.md:14 src/kubectl.md:1
 msgid "kubectl 설치 및 설정"
-msgstr ""
+msgstr "kubectl Installation and Configuration"
 
 #: src/SUMMARY.md:15 src/kubelogin.md:1
 msgid "kubelogin 설치 및 설정"
-msgstr ""
+msgstr "kubelogin Installation and Setting"
 
 #: src/SUMMARY.md:16 src/context.md:1
 msgid "컨텍스트 설정 및 테스트"

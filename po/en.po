@@ -801,7 +801,8 @@ msgstr ""
 
 #: src/container.md:47
 msgid "실행 중인 컨테이너를 아래와 같은 명령어로 접속할 수 있습니다."
-msgstr ""
+msgstr "You can access the running container using the command below."
+
 
 #: src/container.md:49
 msgid ""
@@ -809,6 +810,9 @@ msgid ""
 "$ kubectl exec nginx-pod -it -- /bin/sh\n"
 "```"
 msgstr ""
+"```sh\n"
+"$ kubectl exec nginx-pod -it -- /bin/sh\n"
+"```"
 
 #: src/container.md:53
 msgid ""
@@ -819,6 +823,13 @@ msgid ""
 "버를 띄워두고 port-forwarding을 통해 접속하는 것 역시 금지입니다.** 파이썬 스"
 "크립트로 변환 후 제출하는 방식으로 부탁드립니다."
 msgstr ""
+"However, you should never misuse this by **allocating GPU resources 
+and then submitting a command for an infinite loop, followed by directly accessing the container for coding and experimentation.**
+It's because this allows monopolization of resources like the GPU without actually utilizing them. 
+Such actions are strictly prohibited, and Bacchus continuously monitors to enforce this. 
+Setting up servers like **Jupyter Notebook and accessing them via port-forwarding is also not allowed.**
+We kindly ask you to convert it to a Python script before submitting."
+
 
 #: src/container.md:55
 msgid ""
@@ -827,6 +838,10 @@ msgid ""
 "위해 많은 기능들을 자유롭게 열어두었으니 여러분의 양심에 맡깁니다. 바람직한 "
 "사용법은 워크플로우 예시 부분에서 확인할 수 있습니다."
 msgstr ""
+"However, there are inevitable exceptional cases where one might allocate a few vCPUs without GPU resources, 
+set up a persistent volume, and then delete the Pod. 
+We've provided a wide range of functionalities for flexible use, trusting in your ethical judgment. 
+The recommended way of using can be found in the workflow example section."
 
 #: src/volume.md:3
 msgid ""
@@ -837,6 +852,11 @@ msgid ""
 "이 퍼시스턴트 볼륨의 일부를 사용할수 있습니다. 다음 예시 `nginx-pvc.yaml`는 "
 "30GiB의 퍼시스턴트 볼륨 클레임을 생성하는 예시입니다."
 msgstr ""
+"Data written in container internal storage, such as log files, are stored in the ephemeral-storage. 
+This temporary storage is deleted along with the container, making it unsuitable for storing datasets or execution results. 
+Therefore, the SNUCSE GPU service provides an additional ZFS-based persistent volume. 
+You can use part of this persistent volume through a persistent volume claim. 
+The following example `nginx-pvc.yaml` creates a 30GiB persistent volume claim."
 
 #: src/volume.md:5
 msgid ""
@@ -854,6 +874,19 @@ msgid ""
 "      storage: 30Gi\n"
 "```"
 msgstr ""
+"```yaml\n"
+"# nginx-pvc.yaml\n"
+"kind: PersistentVolumeClaim\n"
+"apiVersion: v1\n"
+"metadata:\n"
+"  name: nginx-pvc\n"
+"spec:\n"
+"  accessModes:\n"
+"    - ReadWriteOnce\n"
+"  resources:\n"
+"    requests:\n"
+"      storage: 30Gi\n"
+"```"
 
 #: src/volume.md:19
 msgid ""
@@ -862,12 +895,17 @@ msgid ""
 "persistentvolumeclaim/nvinx-pvc created\n"
 "```"
 msgstr ""
+"```sh\n"
+"$ kubectl apply -f nginx-pvc.yaml\n"
+"persistentvolumeclaim/nvinx-pvc created\n"
+"```"
 
 #: src/volume.md:24
 msgid ""
 "아래는 생성한 퍼시스턴트 볼륨 클레임을 통해 볼륨을 `/dataset`에 마운트하는 예"
 "시입니다."
 msgstr ""
+"The following is an example of mounting a volume to `/dataset` using the created persistent volume claim."
 
 #: src/volume.md:26
 msgid ""
@@ -897,18 +935,45 @@ msgid ""
 "      claimName: nginx-pvc\n"
 "```"
 msgstr ""
+"```yaml\n"
+"# nginx-pod.yaml\n"
+"apiVersion: v1\n"
+"kind: Pod\n"
+"metadata:\n"
+"  name: nginx-pod\n"
+"spec:\n"
+"  restartPolicy: Never\n"
+"  containers:\n"
+"  - name: nginx-container\n"
+"    image: \"nginx:latest\"\n"
+"    command: [\"echo\"]\n"
+"    args: [\"Hello, world!\"]\n"
+"    resources:\n"
+"      requests:\n"
+"        cpu: 2\n"
+"        memory: \"1Gi\"\n"
+"    volumeMounts:\n"
+"    - mountPath: \"/dataset\"\n"
+"      name: nginx-pv\n"
+"  volumes:\n"
+"  - name: nginx-pv\n"
+"    persistentVolumeClaim:\n"
+"      claimName: nginx-pvc\n"
+"```"
 
 #: src/volume.md:52
 msgid ""
 "`/dataset` 경로에 데이터셋 및 결과를 저장하면 컨테이너 삭제 후에도 데이터가 "
 "보존됩니다."
 msgstr ""
+"Data and results saved in the `/dataset` path will be preserved even after the container is deleted."
 
 #: src/registry.md:3
 msgid ""
 "사용하실 개인 이미지 레지스트리가 없으신 유저분들을 위해서 Bacchus는 레지스트"
 "리를 각 GPU 노드에서 제공합니다."
 msgstr ""
+"For users who do not have a personal image registry to use, Bacchus provides a registry on each GPU node."
 
 #: src/registry.md:7
 msgid ""
@@ -917,6 +982,9 @@ msgid ""
 "어서 사용하시길 바랍니다.** 각 Project는 기본적으로 30GB의 스토리지 Quota를 "
 "가지고 있습니다."
 msgstr ""
+"Currently, there is no limit to the number of Projects you can create. 
+However, since it is a service used by many users, **we kindly request you to create and use 1 Project per user.** 
+Each Project is allocated a default storage Quota of 30GB."
 
 #: src/registry.md:9
 msgid ""
@@ -924,78 +992,85 @@ msgid ""
 "부족해지는 경우가 생기게 된다면, 그 유저의 Project들은 예고 없이 삭제될 수 있"
 "고, 향후 GPU 서비스의 이용이 제한될 예정입니다."
 msgstr ""
+"If a user indiscriminately creates Projects causing a shortage of storage space for others, 
+that user's Projects may be deleted without notice, and future access to the GPU service may be restricted."
 
 #: src/registry.md:11
 msgid "제공 중인 레지스트리"
-msgstr ""
+msgstr "Provided Registries"
 
 #: src/registry.md:13
 msgid "현재 제공되고 있는 레지스트리는 다음과 같습니다."
-msgstr ""
+msgstr "The registries currently being provided are as follows."
 
 #: src/registry.md:15
 msgid "[ferrari](https://registry.ferrari.snucse.org:30443/)"
-msgstr ""
+msgstr "[ferrari](https://registry.ferrari.snucse.org:30443/)"
 
 #: src/registry.md:16
 msgid "[bentley](https://registry.bentley.snucse.org:30443/)"
-msgstr ""
+msgstr "[bentley](https://registry.bentley.snucse.org:30443/)"
 
 #: src/registry.md:18
 msgid "이용 방법"
-msgstr ""
+msgstr "How to Use"
 
 #: src/registry.md:20
 msgid "프로젝트 생성"
-msgstr ""
+msgstr "Creating Project"
 
 #: src/registry.md:22
 msgid ""
 "이용하고 싶은 레지스트리의 URL에 접속하고, `LOGIN VIA OIDC PROVIDER` 버튼을 "
 "통해서 로그인합니다."
 msgstr ""
+"Visit the URL of the registry you wish to use and log in through the `LOGIN VIA OIDC PROVIDER` button."
 
 #: src/registry.md:23
 msgid ""
 "좌측의 `Projects` 탭으로 이동하고, `New Project` 버튼을 눌러서 새로운 프로젝"
 "트를 생성합니다."
 msgstr ""
+"Navigate to the Projects tab on the left and click the `New Project button` to create a new project."
 
 #: src/registry.md:25
 msgid "레지스트리 로그인"
-msgstr ""
+msgstr "Registry Login"
 
 #: src/registry.md:27
 msgid ""
 "기본적으로 다른 이미지 레지스트리를 사용하는 방법과 같습니다. 이 경우 CLI에"
 "서 로그인을 해야하는데, 이 때 사용되는 Credential은 다음과 같습니다."
 msgstr ""
+"It's essentially the same as using any other image registry. 
+In this case, you need to log in from the CLI, and the credentials used are as follows."
 
 #: src/registry.md:29
 msgid "`Username`: ID username"
-msgstr ""
+msgstr "`Username`: ID usernam"
 
 #: src/registry.md:30
 msgid "`Password`: CLI secret"
-msgstr ""
+msgstr "`Password`: CLI secret"
 
 #: src/registry.md:32
 msgid "`CLI secret`을 얻기 위해서는 다음을 따릅니다."
-msgstr ""
+msgstr "Follow the following to get `CLI secret`."
 
 #: src/registry.md:34
 msgid "우측 상단의 버튼에서 `User Profile`을 누릅니다."
-msgstr ""
+msgstr "Click `User Profile` button on the upper right corner."
 
 #: src/registry.md:35
 msgid ""
 "CLI Secret 란의 오른쪽에 있는 Copy 버튼을 눌러서 클립보드에 시크릿을 복사합니"
 "다."
 msgstr ""
+"Click the Copy button on the right side of the CLI Secret section to copy the secret to your clipboard."
 
 #: src/registry.md:37
 msgid "이후, CLI에서 다음과 같이 로그인합니다."
-msgstr ""
+msgstr  "Afterwards, log in as follows from the CLI."
 
 #: src/registry.md:39
 msgid ""
@@ -1007,22 +1082,33 @@ msgid ""
 "# 이후 prompt에서 물어보는 username과 password를 입력합니다.\n"
 "```"
 msgstr ""
+"```sh\n"
+"# The URL will change depending on the registry you use. 
+In this example, we use the registry of ferrari.\n"
+"docker login https://registry.ferrari.snucse.org:30443/\n"
+"\n"
+"# Then, enter the username and password when prompted.\n"
+"```"
 
 #: src/example.md:3
 msgid ""
 "모델 사이즈가 263.9GiB인 Llama-2-70b 모델을 80GB HBM2E A100이 8장 있는 "
 "ferrari 서버에 올리는 예시를 들어겠습니다."
 msgstr ""
+"This is an example of loading the Llama-2-70b model, with a size of 263.9GiB, 
+onto the ferrari server which has eight 80GB HBM2E A100s."
 
 #: src/example.md:5
 msgid "퍼시스턴트 볼륨 클레임 생성"
-msgstr ""
+msgstr "Creating a Persistent Volume Claim"
 
 #: src/example.md:7
 msgid ""
 "먼저 충분한 자원 할당량이 있는지 확인합니다. 아래의 경우는 테스트를 위해 할당"
 "량을 매우 크게 잡은 상태입니다."
 msgstr ""
+"First, check if you have sufficient resource allocation. 
+In the following case, the allocation is set very high for testing purposes."
 
 #: src/example.md:9
 msgid ""
@@ -1033,12 +1119,20 @@ msgid ""
 "com/gpu: 0/8, requests.storage: 0/1000Gi\n"
 "```"
 msgstr ""
+"```sh\n"
+"$ kubectl get resourcequotas\n"
+"NAME      AGE   REQUEST\n"
+"whnbaek   19h   requests.cpu: 0/256, requests.memory: 0/1Ti, requests.nvidia."
+"com/gpu: 0/8, requests.storage: 0/1000Gi\n"
+"```"
 
 #: src/example.md:15
 msgid ""
 "모델이 들어가기에 충분하도록 300GB의 퍼시스턴트 볼륨 클레임, `llama-2-70b-"
 "pvc.yaml`을 먼저 생성하겠습니다."
 msgstr ""
+"First, to ensure there's enough space for the model,
+we will create a 300GB persistent volume claim named llama-2-70b-pvc.yaml."
 
 #: src/example.md:17
 msgid ""
@@ -1056,6 +1150,19 @@ msgid ""
 "      storage: 300Gi\n"
 "```"
 msgstr ""
+"```yaml\n"
+"# llama-2-70b-pvc.yaml\n"
+"kind: PersistentVolumeClaim\n"
+"apiVersion: v1\n"
+"metadata:\n"
+"  name: llama-2-70b-pvc\n"
+"spec:\n"
+"  accessModes:\n"
+"    - ReadWriteOnce\n"
+"  resources:\n"
+"    requests:\n"
+"      storage: 300Gi\n"
+"```"
 
 #: src/example.md:31
 msgid ""
@@ -1064,10 +1171,14 @@ msgid ""
 "persistentvolumeclaim/llama-2-70b-pvc created\n"
 "```"
 msgstr ""
+"```sh\n"
+"$ kubectl apply -f llama-2-70b-pvc.yaml\n"
+"persistentvolumeclaim/llama-2-70b-pvc created\n"
+"```"
 
 #: src/example.md:36
 msgid "이미지 빌드"
-msgstr ""
+msgstr "Build Image"
 
 #: src/example.md:38
 msgid ""
@@ -1076,6 +1187,10 @@ msgid ""
 "에서 어떠한 방식으로 빌드해도 상관이 없지만 예시에서는 로컬에서 Dockerfile을 "
 "작성하여 빌드했습니다. 아래는 빌드에 사용된 Dockerfile입니다."
 msgstr ""
+"Llama 2 utilizes the Pytorch and CUDA environment. 
+We will use the `nvcr.io/nvidia/pytorch:23.06-py3` image that already has these environments set up as a base. 
+You can build the image from anywhere and in any method, but for this example, it was built locally using a Dockerfile. 
+Below is the Dockerfile used for the build."
 
 #: src/example.md:40
 msgid ""
@@ -1090,6 +1205,16 @@ msgid ""
 "RUN cd llama && pip install -e .\n"
 "```"
 msgstr ""
+"```dockerfile\n"
+"# Dockerfile\n"
+"FROM nvcr.io/nvidia/pytorch:23.06-py3\n"
+"\n"
+"RUN apt-get update && apt-get install -y wget git\n"
+"\n"
+"WORKDIR /\n"
+"RUN git clone https://github.com/facebookresearch/llama.git\n"
+"RUN cd llama && pip install -e .\n"
+"```"
 
 #: src/example.md:51
 msgid ""
@@ -1098,6 +1223,10 @@ msgid ""
 "장되므로 컨테이너 실행 시 이미지를 고속으로 pull할 수 있습니다. Harbor에 올려"
 "서 사용하는 시나리오를 예로 들겠습니다."
 msgstr ""
+"You can store the built image locally or in the provided Harbor registry. 
+If you use the provided registry, the image is stored in the server's local storage, 
+enabling fast image pulls when executing containers. 
+We will use the scenario of uploading to Harbor and using it as an example."
 
 #: src/example.md:53
 msgid ""
@@ -1109,10 +1238,17 @@ msgid ""
 "$ docker push registry.ferrari.snucse.org:30443/bacchus/llama:latest\n"
 "```"
 msgstr ""
+"```sh\n"
+"# https://registry.ferrari.snucse.org:30443 에 bacchus라는 project가 있다고 "
+"가정\n"
+"$ docker build -t registry.ferrari.snucse.org:30443/bacchus/llama:latest - < "
+"Dockerfile\n"
+"$ docker push registry.ferrari.snucse.org:30443/bacchus/llama:latest\n"
+"```"
 
 #: src/example.md:59
 msgid "모델 파라미터 다운로드"
-msgstr ""
+msgstr "Download model parameter"
 
 #: src/example.md:61
 msgid ""
@@ -1149,12 +1285,45 @@ msgid ""
 "      claimName: llama-2-70b-pvc\n"
 "```"
 msgstr ""
+"```yaml\n"
+"# llama-2-70b-download.yaml\n"
+"apiVersion: v1\n"
+"kind: Pod\n"
+"metadata:\n"
+"  name: llama-2-70b-download\n"
+"spec:\n"
+"  restartPolicy: Never\n"
+"\n"
+"  containers:\n"
+"  - name: llama-2-70b-container\n"
+"    image: \"registry.ferrari.snucse.org:30443/bacchus/llama:latest\"\n"
+"    command: [\"/bin/bash\"]\n"
+"    args: [\"-c\", \"cd /data; echo \\"
+"\"$URL_FROM_EMAIL\\n$MODELS_TO_DOWNLOAD\\\" | /llama/download.sh;\"]\n"
+"    resources:\n"
+"      limits:\n"
+"        cpu: 4\n"
+"        memory: \"1Gi\"\n"
+"    volumeMounts:\n"
+"    - mountPath: \"/data\"\n"
+"      name: llama-2-70b-pv\n"
+"    env:\n"
+"    - name: URL_FROM_EMAIL\n"
+"      value: \"the URL from email\"\n"
+"    - name: MODELS_TO_DOWNLOAD\n"
+"      value: \"70B\"\n"
+"  volumes:\n"
+"  - name: llama-2-70b-pv\n"
+"    persistentVolumeClaim:\n"
+"      claimName: llama-2-70b-pvc\n"
+"```"
 
 #: src/example.md:93
 msgid ""
 "위 예시에서 `URL_FROM_EMAIL`을 채워넣은 후 실행하여 퍼시스턴트 볼륨에 모델 파"
 "라미터를 다운로드합니다."
 msgstr ""
+"In the example above, fill in the `URL_FROM_EMAIL` and execute it to download the model parameters to the persistent volume."
 
 #: src/example.md:95
 msgid ""
@@ -1163,11 +1332,16 @@ msgid ""
 "pod/llama-2-70b-download created\n"
 "```"
 msgstr ""
+"```sh\n"
+"$ kubectl apply -f llama-2-70b-download.yaml\n"
+"pod/llama-2-70b-download created\n"
+"```"
 
 #: src/example.md:100
 msgid ""
 "다운로드가 완료되면 완료된 pod을 지우고 실제 실험 컨테이너를 실행합니다."
 msgstr ""
+"Once the download is complete, delete the completed pod and run the actual experiment container."
 
 #: src/example.md:102
 msgid ""
@@ -1176,12 +1350,18 @@ msgid ""
 "pod \"llama-2-70b-download\" deleted\n"
 "```"
 msgstr ""
+"```sh\n"
+"$ kubectl delete pods llama-2-70b-download\n"
+"pod \"llama-2-70b-download\" deleted\n"
+"```"
 
 #: src/example.md:107
 msgid ""
 "위와 같이 데이터셋 및 모델 weight를 준비할 때 소수의 CPU만 할당하여 준비하시"
 "기 바랍니다. 스크립트를 한번에 짜서 준비하는 게 어려울 경우"
 msgstr ""
+"When preparing datasets and model weights as mentioned above, please allocate only a small number of CPUs. 
+If you find it difficult to prepare everything in one script,"
 
 #: src/example.md:110
 msgid ""
@@ -1190,6 +1370,10 @@ msgid ""
 "    args: [ \"while true; do sleep 30; done;\" ]\n"
 "```"
 msgstr ""
+"```yaml\n"
+"    command: [ \"/bin/bash\", \"-c\", \"--\" ]\n"
+"    args: [ \"while true; do sleep 30; done;\" ]\n"
+"```"
 
 #: src/example.md:115
 msgid ""
@@ -1197,10 +1381,12 @@ msgid ""
 "이터를 준비할 수 있습니다. 세팅이 끝나면 반드시 해당 pod을 삭제해주시기 바랍"
 "니다."
 msgstr ""
+"you can submit an infinite loop and access via `kubectl exec` to prepare data within the persistent volume. 
+Once the setup is complete, please make sure to delete the corresponding pod."
 
 #: src/example.md:118
 msgid "테스트 실행"
-msgstr ""
+msgstr "Execute test"
 
 #: src/example.md:120
 msgid ""
@@ -1236,6 +1422,37 @@ msgid ""
 "      claimName: llama-2-70b-pvc\n"
 "```"
 msgstr ""
+"```yaml\n"
+"# llama-2-70b-run.yaml\n"
+"apiVersion: v1\n"
+"kind: Pod\n"
+"metadata:\n"
+"  name: llama-2-70b-run\n"
+"spec:\n"
+"  restartPolicy: Never\n"
+"\n"
+"  containers:\n"
+"  - name: llama-2-70b-container\n"
+"    image: \"registry.ferrari.snucse.org:30443/bacchus/llama:latest\"\n"
+"    command: [\"torchrun\"]\n"
+"    args: [\"--nproc_per_node\", \"8\", \"/llama/example_text_completion."
+"py\", \\\n"
+"        \"--ckpt_dir\", \"llama-2-70b\", \"--tokenizer_path\", \"tokenizer."
+"model\", \\\n"
+"        \"--max_seq_len 128\", \"--max_batch_size\", \"4\"]\n"
+"    resources:\n"
+"      limits:\n"
+"        cpu: 256\n"
+"        memory: \"1000Gi\"\n"
+"        nvidia.com/gpu: 8\n"
+"    volumeMounts:\n"
+"    - mountPath: \"/data\"\n"
+"      name: llama-2-70b-pv\n"
+"  volumes:\n"
+"  - name: llama-2-70b-pv\n"
+"    persistentVolumeClaim:\n"
+"      claimName: llama-2-70b-pvc\n"
+"```"
 
 #: src/example.md:150
 msgid ""
@@ -1244,10 +1461,14 @@ msgid ""
 "pod/llama-2-70b-run created\n"
 "```"
 msgstr ""
+"```sh\n"
+"$ kubectl apply -f llama-2-70b-run.yaml\n"
+"pod/llama-2-70b-run created\n"
+"```"
 
 #: src/example.md:155
 msgid "기타"
-msgstr ""
+msgstr "et cetera"
 
 #: src/example.md:157
 msgid ""
@@ -1260,6 +1481,14 @@ msgid ""
 "빌드해주시기 바랍니다. 소스코드를 Github에 올린 후 Github Action과 Github "
 "Packages를 이용하여 이미지를 자동 빌드하는 방법도 좋습니다. "
 msgstr ""
+"When you modify the source code or need to install additional packages, 
+you must rebuild the image and push it to the registry. 
+You can build the image by writing a Dockerfile or using the docker commit command. 
+Due to the characteristics of research, there are often cases where you need to repeatedly execute right after modifying the source code. 
+If you build without considering the caching of image layers, you will need to transfer a large amount of data every time, 
+which can lengthen the cycle between modification and execution. 
+Therefore, it's crucial to optimize the caching of image layers during builds. 
+If you manage your source code on Github, it's recommended to use Github Action and Github Packages to automate the image build and deployment process."
 
 #: src/example.md:159
 msgid ""
@@ -1268,75 +1497,79 @@ msgid ""
 "하므로 무한루프를 걸어 소수의 vCPU와 함께 Pod을 띄운 후 데이터를 주고 받으면 "
 "됩니다."
 msgstr ""
+"When you need to send files to or retrieve them from a persistent volume, 
+you can use `kubectl cp` (refer to kubectl cp --help). 
+To do this, the persistent volume must be attached to a pod. 
+Therefore, you can launch a Pod with a few vCPUs and an infinite loop, then exchange data."
 
 #: src/developers.md:5
 msgid "팀장"
-msgstr ""
+msgstr "Team Leader"
 
 #: src/developers.md:6
 msgid "**백우현** / 컴퓨터공학부 17"
-msgstr ""
+msgstr "**Baek Woohyun** / Department of Computer Science and Engineering '17"
 
 #: src/developers.md:8
 msgid "팀원"
-msgstr ""
+msgstr "Team members"
 
 #: src/developers.md:9
 msgid "**김무환** / 컴퓨터공학부 17"
-msgstr ""
+msgstr "**Kim Muhwan** / Department of Computer Science and Engineering '17"
 
 #: src/developers.md:10
 msgid "**김민준** / 수 리 과 학 부 23"
-msgstr ""
+msgstr "**Kim Minjun** / Department of Mathematical Sciences '23"
 
 #: src/developers.md:11
 msgid "**박재현** / 컴퓨터공학부 16"
-msgstr ""
+msgstr "**Park Jaehyun** / Department of Computer Science and Engineering '16"
 
 #: src/developers.md:12
 msgid "**박종훈** / 컴퓨터공학부 15"
-msgstr ""
+msgstr "**Park Jonghoon** / Department of Computer Science and Engineering '15"
 
 #: src/developers.md:13
 msgid "**박찬우** / 경   영  학   과 17"
-msgstr ""
+msgstr "**Park Chanwoo** / Department of Business Administration '17"
 
 #: src/developers.md:14
 msgid "**서지민** / 컴퓨터공학부 20"
-msgstr ""
+msgstr "**Seo Jimin** / Department of Computer Science and Engineering '20"
 
 #: src/developers.md:15
 msgid "**성용운** / 컴퓨터공학부 17"
-msgstr ""
+msgstr "**Sung Yongwoon** / Department of Computer Science and Engineering '17"
 
 #: src/developers.md:16
 msgid "**오평석** / 컴퓨터공학부 13"
-msgstr ""
+msgstr "**Oh Pyungseok / Department of Computer Science and Engineering '13"
 
 #: src/developers.md:17
 msgid "**오하나** / 자유전공학부 19"
-msgstr ""
+msgstr "**Oh Hana** / Department of Liberal Studies '19"
 
 #: src/developers.md:18
 msgid "**윤지학** / 컴퓨터공학부 16"
-msgstr ""
+msgstr "**Yoon Jihak** / Department of Computer Science and Engineering '16"
 
 #: src/developers.md:19
 msgid "**이준혁** / 컴퓨터공학부 17"
-msgstr ""
+msgstr "**Lee Junhyuk** / Department of Computer Science and Engineering '17"
 
 #: src/developers.md:20
 msgid "**최원우** / 컴퓨터공학부 16"
-msgstr ""
+msgstr "**Choi Wonwoo** / Department of Computer Science and Engineering '16"
 
 #: src/developers.md:22
 msgid "도움 주신 분들"
-msgstr ""
+msgstr "Acknowledgements"
 
 #: src/developers.md:23
 msgid "**이재욱** 교수님"
-msgstr ""
+msgstr "Professor **Lee Jaewook*"
 
 #: src/developers.md:24
 msgid "**전병곤** 교수님"
-msgstr ""
+msgstr "Professor **Jeon Byunggon**"

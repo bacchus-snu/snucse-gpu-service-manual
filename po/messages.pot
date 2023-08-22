@@ -13,7 +13,6 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: src/SUMMARY.md:3
-#: src/introduction.md:1
 msgid "SNUCSE GPU 서비스"
 msgstr ""
 
@@ -22,12 +21,10 @@ msgid "운영 안내"
 msgstr ""
 
 #: src/SUMMARY.md:9
-#: src/servers.md:1
 msgid "서버 목록"
 msgstr ""
 
 #: src/SUMMARY.md:10
-#: src/users.md:1
 msgid "사용자 안내"
 msgstr ""
 
@@ -36,17 +33,14 @@ msgid "서버 접근 방법"
 msgstr ""
 
 #: src/SUMMARY.md:14
-#: src/kubectl.md:1
 msgid "kubectl 설치 및 설정"
 msgstr ""
 
 #: src/SUMMARY.md:15
-#: src/kubelogin.md:1
 msgid "kubelogin 설치 및 설정"
 msgstr ""
 
 #: src/SUMMARY.md:16
-#: src/context.md:1
 msgid "컨텍스트 설정 및 테스트"
 msgstr ""
 
@@ -55,33 +49,38 @@ msgid "서버 이용 방법"
 msgstr ""
 
 #: src/SUMMARY.md:20
-#: src/quota.md:1
 msgid "리소스 쿼터 설정"
 msgstr ""
 
 #: src/SUMMARY.md:21
-#: src/container.md:1
 msgid "컨테이너 실행"
 msgstr ""
 
 #: src/SUMMARY.md:22
-#: src/volume.md:1
 msgid "퍼시스턴트 볼륨 설정"
 msgstr ""
 
 #: src/SUMMARY.md:23
-#: src/registry.md:1
 msgid "이미지 레지스트리 이용"
 msgstr ""
 
 #: src/SUMMARY.md:24
-#: src/example.md:1
 msgid "워크플로우 예시"
 msgstr ""
 
 #: src/SUMMARY.md:28
-#: src/developers.md:1
 msgid "개발팀"
+msgstr ""
+
+#: src/introduction.md:1
+msgid "# SNUCSE GPU 서비스"
+msgstr ""
+
+#: src/introduction.md:3
+#: src/developers.md:3
+msgid ""
+"<p align=center><img height=83 src=\"materials/bacchus.png\"><img height=83 "
+"src=\"materials/glass.png\"></p>"
 msgstr ""
 
 #: src/introduction.md:5
@@ -98,170 +97,75 @@ msgstr ""
 msgid "기타 문의사항은 <contact@bacchus.snucse.org>로 보내주시기 바랍니다. 감사합니다."
 msgstr ""
 
+#: src/servers.md:1
+msgid "# 서버 목록"
+msgstr ""
+
 #: src/servers.md:3
-msgid "이용 가능 서버"
+msgid "## 이용 가능 서버"
 msgstr ""
 
 #: src/servers.md:5
-#: src/servers.md:12
-#: src/kubectl.md:13
-msgid "서버명"
-msgstr ""
-
-#: src/servers.md:5
-#: src/servers.md:12
-msgid "GPU"
-msgstr ""
-
-#: src/servers.md:5
-#: src/servers.md:12
-msgid "vCPU"
-msgstr ""
-
-#: src/servers.md:5
-#: src/servers.md:12
-msgid "메모리"
-msgstr ""
-
-#: src/servers.md:5
-#: src/servers.md:12
-msgid "GPU P2P"
-msgstr ""
-
-#: src/servers.md:5
-#: src/servers.md:12
-msgid "스토리지"
-msgstr ""
-
-#: src/servers.md:7
-#: src/kubectl.md:15
-msgid "ferrari"
-msgstr ""
-
-#: src/servers.md:7
-#: src/servers.md:14
-msgid "(HGX A100)"
-msgstr ""
-
-#: src/servers.md:7
-#: src/servers.md:8
-msgid "8 x A100"
-msgstr ""
-
-#: src/servers.md:7
-#: src/servers.md:14
-msgid "(80GB HBM2E)"
-msgstr ""
-
-#: src/servers.md:7
-#: src/servers.md:8
-msgid "256"
-msgstr ""
-
-#: src/servers.md:7
-#: src/servers.md:8
-msgid "1024GB"
-msgstr ""
-
-#: src/servers.md:7
-#: src/servers.md:8
-msgid "NVSwitch"
-msgstr ""
-
-#: src/servers.md:7
-#: src/servers.md:14
-msgid "7.68TB"
-msgstr ""
-
-#: src/servers.md:8
-#: src/kubectl.md:16
-msgid "bentley"
-msgstr ""
-
-#: src/servers.md:8
-msgid "(DGX A100)"
-msgstr ""
-
-#: src/servers.md:8
-msgid "(40GB HBM2)"
-msgstr ""
-
-#: src/servers.md:8
-msgid "15.36TB"
+msgid ""
+"| 서버명                  | GPU                       | vCPU | 메모리  | GPU P2P  "
+"| 스토리지 |\n"
+"|:---------------------- |:------------------------- |:---- |:------ "
+"|:-------- |:------- |\n"
+"| ferrari<br/>(HGX A100) | 8 x A100<br/>(80GB HBM2E) | 256  | 1024GB | "
+"NVSwitch | 7.68TB  |\n"
+"| bentley<br/>(DGX A100) | 8 x A100<br/>(40GB HBM2)  | 256  | 1024GB | "
+"NVSwitch | 15.36TB |"
 msgstr ""
 
 #: src/servers.md:10
-msgid "도입 예정 서버"
+msgid "## 도입 예정 서버"
 msgstr ""
 
-#: src/servers.md:14
-msgid "ford"
-msgstr ""
-
-#: src/servers.md:14
-msgid "4 x A100"
-msgstr ""
-
-#: src/servers.md:14
-msgid "64"
-msgstr ""
-
-#: src/servers.md:14
-msgid "768GB"
-msgstr ""
-
-#: src/servers.md:14
-msgid "NVLink"
+#: src/servers.md:12
+msgid ""
+"| 서버명                  | GPU                       | vCPU | 메모리  | GPU P2P  "
+"| 스토리지 |\n"
+"|:---------------------- |:------------------------- |:---- |:------ "
+"|:-------- |:------- |\n"
+"| ford<br/>(HGX A100)    | 4 x A100<br/>(80GB HBM2E) | 64   | 768GB  | "
+"NVLink   | 7.68TB  |"
 msgstr ""
 
 #: src/servers.md:16
-msgid "주의"
+msgid "## 주의"
 msgstr ""
 
 #: src/servers.md:18
 msgid "현재 기술적인 문제로 GPUDirect RDMA 및 GPUDirect Storage가 지원되지 않습니다. 추후 지원될 예정입니다."
 msgstr ""
 
+#: src/users.md:1
+msgid "# 사용자 안내"
+msgstr ""
+
 #: src/users.md:3
-msgid "대상"
+msgid "## 대상"
 msgstr ""
 
 #: src/users.md:5
-msgid "학부생"
-msgstr ""
-
-#: src/users.md:6
-msgid "컴퓨터공학부 주전공생"
-msgstr ""
-
-#: src/users.md:7
-msgid "자유전공학부 (컴퓨터공학 주전공) 학생"
-msgstr ""
-
-#: src/users.md:8
-msgid "컴퓨터공학부 복수/부전공생"
-msgstr ""
-
-#: src/users.md:9
-msgid "대학원생"
-msgstr ""
-
-#: src/users.md:10
-msgid "컴퓨터공학부 대학원생"
-msgstr ""
-
-#: src/users.md:11
-msgid "협동과정 인공지능 소속 중 지도교수가 컴퓨터공학부 소속인 대학원생"
+msgid ""
+"- 학부생\n"
+"  - 컴퓨터공학부 주전공생\n"
+"  - 자유전공학부 (컴퓨터공학 주전공) 학생\n"
+"  - 컴퓨터공학부 복수/부전공생\n"
+"- 대학원생\n"
+"  - 컴퓨터공학부 대학원생\n"
+"  - 협동과정 인공지능 소속 중 지도교수가 컴퓨터공학부 소속인 대학원생"
 msgstr ""
 
 #: src/users.md:13
-msgid "ferrari 서버는 학부생, 대학원생 모두 이용할 수 있습니다. bentley 서버는 대학원생만 이용할 수 있습니다."
+msgid "ferrari 서버는 학부생, 대학원생 모두 이용할 수 있습니다.\nbentley 서버는 대학원생만 이용할 수 있습니다."
 msgstr ""
 
 #: src/users.md:16
 #: src/container.md:45
 #: src/registry.md:5
-msgid "주의사항"
+msgid "## 주의사항"
 msgstr ""
 
 #: src/users.md:18
@@ -278,7 +182,7 @@ msgid ""
 msgstr ""
 
 #: src/users.md:22
-msgid "학기 중 차출"
+msgid "## 학기 중 차출"
 msgstr ""
 
 #: src/users.md:24
@@ -289,8 +193,12 @@ msgid ""
 "운용됩니다. 학기 중 리소스 차출 여부 및 규모는 리소스 쿼터 요청 구글 폼 페이지에서 확인할 수 있습니다."
 msgstr ""
 
+#: src/kubectl.md:1
+msgid "# kubectl 설치 및 설정"
+msgstr ""
+
 #: src/kubectl.md:3
-msgid "kubectl 설치"
+msgid "## kubectl 설치"
 msgstr ""
 
 #: src/kubectl.md:5
@@ -304,7 +212,7 @@ msgid "<https://kubernetes.io/docs/tasks/tools/#kubectl>"
 msgstr ""
 
 #: src/kubectl.md:9
-msgid "클러스터 등록"
+msgid "## 클러스터 등록"
 msgstr ""
 
 #: src/kubectl.md:11
@@ -312,27 +220,14 @@ msgid "`kubectl`을 통해서 서버의 엔트리포인트와 인증서를 등�
 msgstr ""
 
 #: src/kubectl.md:13
-msgid "엔트리포인트"
-msgstr ""
-
-#: src/kubectl.md:13
-msgid "인증서"
-msgstr ""
-
-#: src/kubectl.md:15
-msgid "https://147.46.15.75:6443"
-msgstr ""
-
-#: src/kubectl.md:15
-msgid "[ferrari.crt](./materials/ferrari.crt)"
-msgstr ""
-
-#: src/kubectl.md:16
-msgid "https://147.46.92.213:6443"
-msgstr ""
-
-#: src/kubectl.md:16
-msgid "[bentley.crt](./materials/bentley.crt)"
+msgid ""
+"| 서버명   | 엔트리포인트                 | 인증서                                  |\n"
+"|:------- |:-------------------------- "
+"|:-------------------------------------- |\n"
+"| ferrari | https://147.46.15.75:6443  | "
+"[ferrari.crt](./materials/ferrari.crt) | \n"
+"| bentley | https://147.46.92.213:6443 | "
+"[bentley.crt](./materials/bentley.crt) |"
 msgstr ""
 
 #: src/kubectl.md:18
@@ -351,8 +246,12 @@ msgid ""
 "```"
 msgstr ""
 
+#: src/kubelogin.md:1
+msgid "# kubelogin 설치 및 설정"
+msgstr ""
+
 #: src/kubelogin.md:3
-msgid "kubelogin 설치"
+msgid "## kubelogin 설치"
 msgstr ""
 
 #: src/kubelogin.md:5
@@ -378,7 +277,7 @@ msgid "<https://krew.sigs.k8s.io/docs/user-guide/setup/install/>"
 msgstr ""
 
 #: src/kubelogin.md:13
-msgid "유저 등록"
+msgid "## 유저 등록"
 msgstr ""
 
 #: src/kubelogin.md:15
@@ -401,8 +300,12 @@ msgid ""
 "```"
 msgstr ""
 
+#: src/context.md:1
+msgid "# 컨텍스트 설정 및 테스트"
+msgstr ""
+
 #: src/context.md:3
-msgid "컨텍스트 등록"
+msgid "## 컨텍스트 등록"
 msgstr ""
 
 #: src/context.md:5
@@ -431,7 +334,7 @@ msgid ""
 msgstr ""
 
 #: src/context.md:16
-msgid "컨텍스트 변경"
+msgid "## 컨텍스트 변경"
 msgstr ""
 
 #: src/context.md:18
@@ -447,7 +350,7 @@ msgid ""
 msgstr ""
 
 #: src/context.md:25
-msgid "테스트"
+msgid "## 테스트"
 msgstr ""
 
 #: src/context.md:27
@@ -476,8 +379,12 @@ msgstr ""
 msgid "해당 명령어를 실행할 때 인증을 위해 SNUCSE ID 로그인 창이 켜질 수 있습니다. 로그인 후 권한을 승인하면 됩니다."
 msgstr ""
 
+#: src/quota.md:1
+msgid "# 리소스 쿼터 설정"
+msgstr ""
+
 #: src/quota.md:3
-msgid "부트스트랩 생성"
+msgid "## 부트스트랩 생성"
 msgstr ""
 
 #: src/quota.md:5
@@ -524,7 +431,7 @@ msgid ""
 msgstr ""
 
 #: src/quota.md:30
-msgid "리소스 쿼터 신청"
+msgid "## 리소스 쿼터 신청"
 msgstr ""
 
 #: src/quota.md:32
@@ -532,19 +439,11 @@ msgid "리소스 종류는 다음과 같습니다. (ephemeral-storage 추후 제
 msgstr ""
 
 #: src/quota.md:33
-msgid "cpu"
-msgstr ""
-
-#: src/quota.md:34
-msgid "memory"
-msgstr ""
-
-#: src/quota.md:35
-msgid "gpu"
-msgstr ""
-
-#: src/quota.md:36
-msgid "storage"
+msgid ""
+"- cpu\n"
+"- memory\n"
+"- gpu\n"
+"- storage"
 msgstr ""
 
 #: src/quota.md:38
@@ -575,8 +474,12 @@ msgid ""
 "설정됩니다."
 msgstr ""
 
+#: src/container.md:1
+msgid "# 컨테이너 실행"
+msgstr ""
+
 #: src/container.md:3
-msgid "YAML 파일 작성"
+msgid "## YAML 파일 작성"
 msgstr ""
 
 #: src/container.md:5
@@ -624,7 +527,7 @@ msgid ""
 msgstr ""
 
 #: src/container.md:30
-msgid "실행 및 확인"
+msgid "## 실행 및 확인"
 msgstr ""
 
 #: src/container.md:32
@@ -672,6 +575,10 @@ msgid ""
 "다만, GPU 자원 없이 소수의 vCPU를 할당하여 퍼시스턴트 볼륨을 구성한 후 Pod을 삭제하는 등의 극히 예외적인 경우는 어쩔 수 "
 "없는 부분입니다. 자유로운 사용을 위해 많은 기능들을 자유롭게 열어두었으니 여러분의 양심에 맡깁니다. 바람직한 사용법은 워크플로우 예시 "
 "부분에서 확인할 수 있습니다."
+msgstr ""
+
+#: src/volume.md:1
+msgid "# 퍼시스턴트 볼륨 설정"
 msgstr ""
 
 #: src/volume.md:3
@@ -744,6 +651,10 @@ msgstr ""
 msgid "`/dataset` 경로에 데이터셋 및 결과를 저장하면 컨테이너 삭제 후에도 데이터가 보존됩니다."
 msgstr ""
 
+#: src/registry.md:1
+msgid "# 이미지 레지스트리 이용"
+msgstr ""
+
 #: src/registry.md:3
 msgid "사용하실 개인 이미지 레지스트리가 없으신 유저분들을 위해서 Bacchus는 레지스트리를 각 GPU 노드에서 제공합니다."
 msgstr ""
@@ -762,7 +673,7 @@ msgid ""
 msgstr ""
 
 #: src/registry.md:11
-msgid "제공 중인 레지스트리"
+msgid "## 제공 중인 레지스트리"
 msgstr ""
 
 #: src/registry.md:13
@@ -770,31 +681,27 @@ msgid "현재 제공되고 있는 레지스트리는 다음과 같습니다."
 msgstr ""
 
 #: src/registry.md:15
-msgid "[ferrari](https://registry.ferrari.snucse.org:30443/)"
-msgstr ""
-
-#: src/registry.md:16
-msgid "[bentley](https://registry.bentley.snucse.org:30443/)"
+msgid ""
+"* [ferrari](https://registry.ferrari.snucse.org:30443/)\n"
+"* [bentley](https://registry.bentley.snucse.org:30443/)"
 msgstr ""
 
 #: src/registry.md:18
-msgid "이용 방법"
+msgid "## 이용 방법"
 msgstr ""
 
 #: src/registry.md:20
-msgid "프로젝트 생성"
+msgid "### 프로젝트 생성"
 msgstr ""
 
 #: src/registry.md:22
-msgid "이용하고 싶은 레지스트리의 URL에 접속하고, `LOGIN VIA OIDC PROVIDER` 버튼을 통해서 로그인합니다."
-msgstr ""
-
-#: src/registry.md:23
-msgid "좌측의 `Projects` 탭으로 이동하고, `New Project` 버튼을 눌러서 새로운 프로젝트를 생성합니다."
+msgid ""
+"1. 이용하고 싶은 레지스트리의 URL에 접속하고, `LOGIN VIA OIDC PROVIDER` 버튼을 통해서 로그인합니다.\n"
+"1. 좌측의 `Projects` 탭으로 이동하고, `New Project` 버튼을 눌러서 새로운 프로젝트를 생성합니다."
 msgstr ""
 
 #: src/registry.md:25
-msgid "레지스트리 로그인"
+msgid "### 레지스트리 로그인"
 msgstr ""
 
 #: src/registry.md:27
@@ -804,11 +711,7 @@ msgid ""
 msgstr ""
 
 #: src/registry.md:29
-msgid "`Username`: ID username"
-msgstr ""
-
-#: src/registry.md:30
-msgid "`Password`: CLI secret"
+msgid "* `Username`: ID username\n* `Password`: CLI secret"
 msgstr ""
 
 #: src/registry.md:32
@@ -816,11 +719,9 @@ msgid "`CLI secret`을 얻기 위해서는 다음을 따릅니다."
 msgstr ""
 
 #: src/registry.md:34
-msgid "우측 상단의 버튼에서 `User Profile`을 누릅니다."
-msgstr ""
-
-#: src/registry.md:35
-msgid "CLI Secret 란의 오른쪽에 있는 Copy 버튼을 눌러서 클립보드에 시크릿을 복사합니다."
+msgid ""
+"1. 우측 상단의 버튼에서 `User Profile`을 누릅니다.\n"
+"1. CLI Secret 란의 오른쪽에 있는 Copy 버튼을 눌러서 클립보드에 시크릿을 복사합니다."
 msgstr ""
 
 #: src/registry.md:37
@@ -837,6 +738,10 @@ msgid ""
 "```"
 msgstr ""
 
+#: src/example.md:1
+msgid "# 워크플로우 예시"
+msgstr ""
+
 #: src/example.md:3
 msgid ""
 "모델 사이즈가 263.9GiB인 Llama-2-70b 모델을 80GB HBM2E A100이 8장 있는 ferrari 서버에 올리는 예시를 "
@@ -844,7 +749,7 @@ msgid ""
 msgstr ""
 
 #: src/example.md:5
-msgid "퍼시스턴트 볼륨 클레임 생성"
+msgid "## 퍼시스턴트 볼륨 클레임 생성"
 msgstr ""
 
 #: src/example.md:7
@@ -891,7 +796,7 @@ msgid ""
 msgstr ""
 
 #: src/example.md:36
-msgid "이미지 빌드"
+msgid "## 이미지 빌드"
 msgstr ""
 
 #: src/example.md:38
@@ -933,7 +838,7 @@ msgid ""
 msgstr ""
 
 #: src/example.md:59
-msgid "모델 파라미터 다운로드"
+msgid "## 모델 파라미터 다운로드"
 msgstr ""
 
 #: src/example.md:61
@@ -998,8 +903,8 @@ msgstr ""
 
 #: src/example.md:107
 msgid ""
-"위와 같이 데이터셋 및 모델 weight를 준비할 때 소수의 CPU만 할당하여 준비하시기 바랍니다. 스크립트를 한번에 짜서 준비하는 게 "
-"어려울 경우"
+"위와 같이 데이터셋 및 모델 weight를 준비할 때 소수의 CPU만 할당하여 준비하시기 바랍니다.\n"
+"스크립트를 한번에 짜서 준비하는 게 어려울 경우"
 msgstr ""
 
 #: src/example.md:110
@@ -1012,12 +917,12 @@ msgstr ""
 
 #: src/example.md:115
 msgid ""
-"와 같이 무한루프를 제출하고 `kubectl exec`으로 접속하여 퍼시스턴트 볼륨 내 데이터를 준비할 수 있습니다. 세팅이 끝나면 "
-"반드시 해당 pod을 삭제해주시기 바랍니다."
+"와 같이 무한루프를 제출하고 `kubectl exec`으로 접속하여 퍼시스턴트 볼륨 내 데이터를 준비할 수 있습니다.\n"
+"세팅이 끝나면 반드시 해당 pod을 삭제해주시기 바랍니다."
 msgstr ""
 
 #: src/example.md:118
-msgid "테스트 실행"
+msgid "## 테스트 실행"
 msgstr ""
 
 #: src/example.md:120
@@ -1064,7 +969,7 @@ msgid ""
 msgstr ""
 
 #: src/example.md:155
-msgid "기타"
+msgid "## 기타"
 msgstr ""
 
 #: src/example.md:157
@@ -1083,12 +988,16 @@ msgid ""
 "됩니다."
 msgstr ""
 
+#: src/developers.md:1
+msgid "# 개발팀"
+msgstr ""
+
 #: src/developers.md:5
 msgid "팀장"
 msgstr ""
 
 #: src/developers.md:6
-msgid "**백우현** / 컴퓨터공학부 17"
+msgid "- **백우현** / 컴퓨터공학부 17"
 msgstr ""
 
 #: src/developers.md:8
@@ -1096,51 +1005,19 @@ msgid "팀원"
 msgstr ""
 
 #: src/developers.md:9
-msgid "**김무환** / 컴퓨터공학부 17"
-msgstr ""
-
-#: src/developers.md:10
-msgid "**김민준** / 수 리 과 학 부 23"
-msgstr ""
-
-#: src/developers.md:11
-msgid "**박재현** / 컴퓨터공학부 16"
-msgstr ""
-
-#: src/developers.md:12
-msgid "**박종훈** / 컴퓨터공학부 15"
-msgstr ""
-
-#: src/developers.md:13
-msgid "**박찬우** / 경   영  학   과 17"
-msgstr ""
-
-#: src/developers.md:14
-msgid "**서지민** / 컴퓨터공학부 20"
-msgstr ""
-
-#: src/developers.md:15
-msgid "**성용운** / 컴퓨터공학부 17"
-msgstr ""
-
-#: src/developers.md:16
-msgid "**오평석** / 컴퓨터공학부 13"
-msgstr ""
-
-#: src/developers.md:17
-msgid "**오하나** / 자유전공학부 19"
-msgstr ""
-
-#: src/developers.md:18
-msgid "**윤지학** / 컴퓨터공학부 16"
-msgstr ""
-
-#: src/developers.md:19
-msgid "**이준혁** / 컴퓨터공학부 17"
-msgstr ""
-
-#: src/developers.md:20
-msgid "**최원우** / 컴퓨터공학부 16"
+msgid ""
+"- **김무환** / 컴퓨터공학부 17\n"
+"- **김민준** / 수 리 과 학 부 23\n"
+"- **박재현** / 컴퓨터공학부 16\n"
+"- **박종훈** / 컴퓨터공학부 15\n"
+"- **박찬우** / 경 &nbsp;&nbsp;영 &nbsp;학 &nbsp;&nbsp;과 17\n"
+"- **서지민** / 컴퓨터공학부 20\n"
+"- **성용운** / 컴퓨터공학부 17\n"
+"- **오평석** / 컴퓨터공학부 13\n"
+"- **오하나** / 자유전공학부 19\n"
+"- **윤지학** / 컴퓨터공학부 16\n"
+"- **이준혁** / 컴퓨터공학부 17\n"
+"- **최원우** / 컴퓨터공학부 16"
 msgstr ""
 
 #: src/developers.md:22
@@ -1148,10 +1025,6 @@ msgid "도움 주신 분들"
 msgstr ""
 
 #: src/developers.md:23
-msgid "**이재욱** 교수님"
-msgstr ""
-
-#: src/developers.md:24
-msgid "**전병곤** 교수님"
+msgid "- **이재욱** 교수님\n- **전병곤** 교수님"
 msgstr ""
 

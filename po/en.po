@@ -11,7 +11,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: src/SUMMARY.md:3 src/introduction.md:1
+#: src/SUMMARY.md:3
 msgid "SNUCSE GPU 서비스"
 msgstr "SNUCSE GPU Service"
 
@@ -19,11 +19,11 @@ msgstr "SNUCSE GPU Service"
 msgid "운영 안내"
 msgstr "Operation Guidelines"
 
-#: src/SUMMARY.md:9 src/servers.md:1
+#: src/SUMMARY.md:9
 msgid "서버 목록"
 msgstr "Server List"
 
-#: src/SUMMARY.md:10 src/users.md:1
+#: src/SUMMARY.md:10
 msgid "사용자 안내"
 msgstr "User Guidelines"
 
@@ -31,15 +31,15 @@ msgstr "User Guidelines"
 msgid "서버 접근 방법"
 msgstr "How to Access the Server"
 
-#: src/SUMMARY.md:14 src/kubectl.md:1
+#: src/SUMMARY.md:14
 msgid "kubectl 설치 및 설정"
 msgstr "kubectl Installation and Configuration"
 
-#: src/SUMMARY.md:15 src/kubelogin.md:1
+#: src/SUMMARY.md:15
 msgid "kubelogin 설치 및 설정"
 msgstr "kubelogin Installation and Configuration"
 
-#: src/SUMMARY.md:16 src/context.md:1
+#: src/SUMMARY.md:16
 msgid "컨텍스트 설정 및 테스트"
 msgstr "Context Configuration and Test"
 
@@ -47,203 +47,147 @@ msgstr "Context Configuration and Test"
 msgid "서버 이용 방법"
 msgstr "How to Use the Server"
 
-#: src/SUMMARY.md:20 src/quota.md:1
+#: src/SUMMARY.md:20
 msgid "리소스 쿼터 설정"
 msgstr "Resource Quota Configuration"
 
-#: src/SUMMARY.md:21 src/container.md:1
+#: src/SUMMARY.md:21
 msgid "컨테이너 실행"
 msgstr "Container Execution"
 
-#: src/SUMMARY.md:22 src/volume.md:1
+#: src/SUMMARY.md:22
 msgid "퍼시스턴트 볼륨 설정"
 msgstr "Persistent Volume Configuration"
 
-#: src/SUMMARY.md:23 src/registry.md:1
+#: src/SUMMARY.md:23
 msgid "이미지 레지스트리 이용"
 msgstr "Using Image Registry"
 
-#: src/SUMMARY.md:24 src/example.md:1
+#: src/SUMMARY.md:24
 msgid "워크플로우 예시"
 msgstr "Workflow Examples"
 
-#: src/SUMMARY.md:28 src/developers.md:1
+#: src/SUMMARY.md:28
 msgid "개발팀"
 msgstr "Developers"
+
+#: src/introduction.md:1
+#, fuzzy
+msgid "# SNUCSE GPU 서비스"
+msgstr "SNUCSE GPU Service"
+
+#: src/introduction.md:3 src/developers.md:3
+msgid ""
+"<p align=center><img height=83 src=\"materials/bacchus.png\"><img height=83 "
+"src=\"materials/glass.png\"></p>"
+msgstr ""
 
 #: src/introduction.md:5
 msgid ""
 "안녕하세요, 여러분과 함께하는 서울대학교 컴퓨터공학부 서버 관리자 모임 바쿠스"
 "입니다."
-msgstr "Hello, we are 'Bacchus', the server administrators from the Department of Computer Science and Engineering at Seoul National University."
+msgstr ""
+"Hello, we are 'Bacchus', the server administrators from the Department of "
+"Computer Science and Engineering at Seoul National University."
 
 #: src/introduction.md:7
 msgid ""
 "바쿠스에서는 컴퓨터공학부 구성원들에게 GPU 서버를 무료로 제공하고 있습니다. "
 "**A100 GPU** 서버를 이용하실 분들은 이 매뉴얼을 읽어주시기 바랍니다."
 msgstr ""
-"We provide GPU servers to members of the Department of Computer Science and Engineering for free. "
-"Please read this manual for those who want to use the **A100 GPU** servers."
+"We provide GPU servers to members of the Department of Computer Science and "
+"Engineering for free. Please read this manual for those who want to use the "
+"**A100 GPU** servers."
 
 #: src/introduction.md:9
 msgid ""
 "기타 문의사항은 <contact@bacchus.snucse.org>로 보내주시기 바랍니다. 감사합니"
 "다."
-msgstr "For any other inquiries, please send an email to <contact@bacchus.snucse.org>. Thank you."
+msgstr ""
+"For any other inquiries, please send an email to <contact@bacchus.snucse."
+"org>. Thank you."
+
+#: src/servers.md:1
+#, fuzzy
+msgid "# 서버 목록"
+msgstr "Server List"
 
 #: src/servers.md:3
-msgid "이용 가능 서버"
+#, fuzzy
+msgid "## 이용 가능 서버"
 msgstr "Available Servers"
 
-#: src/servers.md:5 src/servers.md:12 src/kubectl.md:13
-msgid "서버명"
-msgstr "Server name"
-
-#: src/servers.md:5 src/servers.md:12
-msgid "GPU"
-msgstr "GPU"
-
-#: src/servers.md:5 src/servers.md:12
-msgid "vCPU"
-msgstr "vCPU"
-
-#: src/servers.md:5 src/servers.md:12
-msgid "메모리"
-msgstr "Memory"
-
-#: src/servers.md:5 src/servers.md:12
-msgid "GPU P2P"
-msgstr "GPU P2P"
-
-#: src/servers.md:5 src/servers.md:12
-msgid "스토리지"
-msgstr "Storage"
-
-#: src/servers.md:7 src/kubectl.md:15
-msgid "ferrari"
-msgstr "ferrari"
-
-#: src/servers.md:7 src/servers.md:14
-msgid "(HGX A100)"
-msgstr "(HGX A100)"
-
-#: src/servers.md:7 src/servers.md:8
-msgid "8 x A100"
-msgstr "8 x A100"
-
-#: src/servers.md:7 src/servers.md:14
-msgid "(80GB HBM2E)"
-msgstr "(80GB HBM2E)"
-
-#: src/servers.md:7 src/servers.md:8
-msgid "256"
-msgstr "256"
-
-#: src/servers.md:7 src/servers.md:8
-msgid "1024GB"
-msgstr "1024GB"
-
-#: src/servers.md:7 src/servers.md:8
-msgid "NVSwitch"
-msgstr "NVSwitch"
-
-#: src/servers.md:7 src/servers.md:14
-msgid "7.68TB"
-msgstr "7.68TB"
-
-#: src/servers.md:8 src/kubectl.md:16
-msgid "bentley"
-msgstr "bentley"
-
-#: src/servers.md:8
-msgid "(DGX A100)"
-msgstr "(DGX A100)"
-
-#: src/servers.md:8
-msgid "(40GB HBM2)"
-msgstr "(40GB HBM2)"
-
-#: src/servers.md:8
-msgid "15.36TB"
-msgstr "15.36TB"
+#: src/servers.md:5
+msgid ""
+"| 서버명                  | GPU                       | vCPU | 메모리  | GPU "
+"P2P  | 스토리지 |\n"
+"|:---------------------- |:------------------------- |:---- |:------ "
+"|:-------- |:------- |\n"
+"| ferrari<br/>(HGX A100) | 8 x A100<br/>(80GB HBM2E) | 256  | 1024GB | "
+"NVSwitch | 7.68TB  |\n"
+"| bentley<br/>(DGX A100) | 8 x A100<br/>(40GB HBM2)  | 256  | 1024GB | "
+"NVSwitch | 15.36TB |"
+msgstr ""
 
 #: src/servers.md:10
-msgid "도입 예정 서버"
+#, fuzzy
+msgid "## 도입 예정 서버"
 msgstr "Upcoming servers"
 
-#: src/servers.md:14
-msgid "ford"
-msgstr "ford"
-
-#: src/servers.md:14
-msgid "4 x A100"
-msgstr "4 x A100"
-
-#: src/servers.md:14
-msgid "64"
-msgstr "64"
-
-#: src/servers.md:14
-msgid "768GB"
-msgstr "768GB"
-
-#: src/servers.md:14
-msgid "NVLink"
-msgstr "NVLink"
+#: src/servers.md:12
+msgid ""
+"| 서버명                  | GPU                       | vCPU | 메모리  | GPU "
+"P2P  | 스토리지 |\n"
+"|:---------------------- |:------------------------- |:---- |:------ "
+"|:-------- |:------- |\n"
+"| ford<br/>(HGX A100)    | 4 x A100<br/>(80GB HBM2E) | 64   | 768GB  | "
+"NVLink   | 7.68TB  |"
+msgstr ""
 
 #: src/servers.md:16
-msgid "주의"
-msgstr "Notes"
+msgid "## 주의"
+msgstr ""
 
 #: src/servers.md:18
 msgid ""
 "현재 기술적인 문제로 GPUDirect RDMA 및 GPUDirect Storage가 지원되지 않습니"
 "다. 추후 지원될 예정입니다."
 msgstr ""
-"GPUDirect RDMA and GPUDirect Storage are not supported due to technical issues."
-"They will be supported soon in the future."
+"GPUDirect RDMA and GPUDirect Storage are not supported due to technical "
+"issues.They will be supported soon in the future."
+
+#: src/users.md:1
+#, fuzzy
+msgid "# 사용자 안내"
+msgstr "User Guidelines"
 
 #: src/users.md:3
-msgid "대상"
-msgstr "Those available"
+msgid "## 대상"
+msgstr ""
 
 #: src/users.md:5
-msgid "학부생"
-msgstr "Undergraduate students"
-
-#: src/users.md:6
-msgid "컴퓨터공학부 주전공생"
-msgstr "Computer Science and Engineering major students"
-
-#: src/users.md:7
-msgid "자유전공학부 (컴퓨터공학 주전공) 학생"
-msgstr "Liberal Studies students (majoring in Computer Science and Engineering)"
-
-#: src/users.md:8
-msgid "컴퓨터공학부 복수/부전공생"
-msgstr "Computer Science and Engineering (double/minor) students"
-
-#: src/users.md:9
-msgid "대학원생"
-msgstr "Graduate students"
-
-#: src/users.md:10
-msgid "컴퓨터공학부 대학원생"
-msgstr "Computer Science and Engineering graduate students"
-
-#: src/users.md:11
-msgid "협동과정 인공지능 소속 중 지도교수가 컴퓨터공학부 소속인 대학원생"
-msgstr "Graduate students in the interdisciplinary program in Artificial Intelligence whose supervisor is affiliated with Department of Computer Science and Engineering"
+msgid ""
+"- 학부생\n"
+"  - 컴퓨터공학부 주전공생\n"
+"  - 자유전공학부 (컴퓨터공학 주전공) 학생\n"
+"  - 컴퓨터공학부 복수/부전공생\n"
+"- 대학원생\n"
+"  - 컴퓨터공학부 대학원생\n"
+"  - 협동과정 인공지능 소속 중 지도교수가 컴퓨터공학부 소속인 대학원생"
+msgstr ""
 
 #: src/users.md:13
+#, fuzzy
 msgid ""
-"ferrari 서버는 학부생, 대학원생 모두 이용할 수 있습니다. bentley 서버는 대학"
-"원생만 이용할 수 있습니다."
+"ferrari 서버는 학부생, 대학원생 모두 이용할 수 있습니다.\n"
+"bentley 서버는 대학원생만 이용할 수 있습니다."
 msgstr ""
-"'ferrari' server can be used by both undergraduates and graduate students. 'bentley' server can only be used by graduate students."
+"'ferrari' server can be used by both undergraduates and graduate students. "
+"'bentley' server can only be used by graduate students."
 
 #: src/users.md:16 src/container.md:45 src/registry.md:5
-msgid "주의사항"
+#, fuzzy
+msgid "## 주의사항"
 msgstr "Notes"
 
 #: src/users.md:18
@@ -252,7 +196,9 @@ msgid ""
 "링하고 있으며, 연구 목적 이외의 사용이 적발될 경우 서비스 이용에 불이익이 있"
 "을 수 있습니다."
 msgstr ""
-"All servers can only be used for **research purposes**. Bacchus continuously monitors the servers, and if you use them illegally, there may be disadvantages in using the service."
+"All servers can only be used for **research purposes**. Bacchus continuously "
+"monitors the servers, and if you use them illegally, there may be "
+"disadvantages in using the service."
 
 #: src/users.md:20
 msgid ""
@@ -262,12 +208,16 @@ msgid ""
 "때문에 특정 사용자가 리소스를 장기간 점유하는 문제를 해결하기에 어려움이 있습"
 "니다. 따라서 사용자 여러분들의 배려가 필요합니다."
 msgstr ""
-"Since the A100 GPU resources are limited, please use them only when necessary, such as when having a large size deep learning model or needing to train some models urgently."
-"Unlike external clouds or SNU College of Engineering's 'GPU First', all services are provided for free. Therefore, it is challenging to prevent some bad users from occupying resources for a long time."
-"We need your help."
+"Since the A100 GPU resources are limited, please use them only when "
+"necessary, such as when having a large size deep learning model or needing "
+"to train some models urgently.Unlike external clouds or SNU College of "
+"Engineering's 'GPU First', all services are provided for free. Therefore, it "
+"is challenging to prevent some bad users from occupying resources for a long "
+"time.We need your help."
 
 #: src/users.md:22
-msgid "학기 중 차출"
+#, fuzzy
+msgid "## 학기 중 차출"
 msgstr "Borrowing during the semester"
 
 #: src/users.md:24
@@ -279,14 +229,23 @@ msgid ""
 "에는 모두 기존 A100으로 합쳐져서 운용됩니다. 학기 중 리소스 차출 여부 및 규모"
 "는 리소스 쿼터 요청 구글 폼 페이지에서 확인할 수 있습니다."
 msgstr ""
-"During the semester, part or all of the 'ferrari' server could be borrowed for the class. 
-In this case, the MiG (Multi-Instance GPU) setting is activated, allowing a single A100 GPU to be divided into up to seven parts. 
-Bacchus continuously monitors the usage patterns of undergraduate members, and based on this, the configuration and number of MiGs may be adjusted. 
-During the vacation, they are all combined back into the original A100. 
-You can check how many resources are borrowed and how many are available on the resource quota survey website by Google form."
+"During the semester, part or all of the 'ferrari' server could be borrowed "
+"for the class. In this case, the MiG (Multi-Instance GPU) setting is "
+"activated, allowing a single A100 GPU to be divided into up to seven parts. "
+"Bacchus continuously monitors the usage patterns of undergraduate members, "
+"and based on this, the configuration and number of MiGs may be adjusted. "
+"During the vacation, they are all combined back into the original A100. You "
+"can check how many resources are borrowed and how many are available on the "
+"resource quota survey website by Google form."
+
+#: src/kubectl.md:1
+#, fuzzy
+msgid "# kubectl 설치 및 설정"
+msgstr "kubectl Installation and Configuration"
 
 #: src/kubectl.md:3
-msgid "kubectl 설치"
+#, fuzzy
+msgid "## kubectl 설치"
 msgstr "kubectl Installation"
 
 #: src/kubectl.md:5
@@ -295,45 +254,36 @@ msgid ""
 "기 위해서는 `kubectl` 커맨드라인 툴이 필요합니다. 아래 링크를 참고하여 각자"
 "의 로컬 환경에 맞게 `kubectl`을 설치해주시기 바랍니다."
 msgstr ""
-"SNUCSE GPU Service utilizes single-node Kubernetes. 
-Therefore, to access the server, you need `kubectl` command-line tool. 
-Please refer to the link below and install `kubectl` for your local environment."
+"SNUCSE GPU Service utilizes single-node Kubernetes. Therefore, to access the "
+"server, you need `kubectl` command-line tool. Please refer to the link below "
+"and install `kubectl` for your local environment."
 
 #: src/kubectl.md:7
 msgid "<https://kubernetes.io/docs/tasks/tools/#kubectl>"
 msgstr "<https://kubernetes.io/docs/tasks/tools/#kubectl>"
 
 #: src/kubectl.md:9
-msgid "클러스터 등록"
+#, fuzzy
+msgid "## 클러스터 등록"
 msgstr "Cluster Registration"
 
 #: src/kubectl.md:11
 msgid "`kubectl`을 통해서 서버의 엔트리포인트와 인증서를 등록해야합니다."
-msgstr "You need to register the server's entry point and certificate through `kubectl`."
+msgstr ""
+"You need to register the server's entry point and certificate through "
+"`kubectl`."
 
 #: src/kubectl.md:13
-msgid "엔트리포인트"
-msgstr "Entry point"
-
-#: src/kubectl.md:13
-msgid "인증서"
-msgstr "Certificate"
-
-#: src/kubectl.md:15
-msgid "https://147.46.15.75:6443"
-msgstr "https://147.46.15.75:6443"
-
-#: src/kubectl.md:15
-msgid "[ferrari.crt](./materials/ferrari.crt)"
-msgstr "[ferrari.crt](./materials/ferrari.crt)"
-
-#: src/kubectl.md:16
-msgid "https://147.46.92.213:6443"
-msgstr "https://147.46.92.213:6443"
-
-#: src/kubectl.md:16
-msgid "[bentley.crt](./materials/bentley.crt)"
-msgstr "[bentley.crt](./materials/bentley.crt)"
+msgid ""
+"| 서버명   | 엔트리포인트                 | 인증"
+"서                                  |\n"
+"|:------- |:-------------------------- "
+"|:-------------------------------------- |\n"
+"| ferrari | https://147.46.15.75:6443  | [ferrari.crt](./materials/ferrari."
+"crt) | \n"
+"| bentley | https://147.46.92.213:6443 | [bentley.crt](./materials/bentley."
+"crt) |"
+msgstr ""
 
 #: src/kubectl.md:18
 msgid ""
@@ -341,8 +291,9 @@ msgid ""
 "명령어를 통해 클러스터를 등록합니다. 클러스터를 원하는 이름으로 붙일 수 있습"
 "니다. (e.g. `bentley`)"
 msgstr ""
-"After downloading the corresponding certificate to an appropriate path (e.g., ~/.kube/), 
-register the cluster using some commands like below. You can name the cluster as you wish (e.g., bentley)."
+"After downloading the corresponding certificate to an appropriate path (e."
+"g., ~/.kube/), register the cluster using some commands like below. You can "
+"name the cluster as you wish (e.g., bentley)."
 
 #: src/kubectl.md:19
 msgid ""
@@ -360,8 +311,14 @@ msgstr ""
 "  --certificate-authority=bentley.crt\n"
 "```"
 
+#: src/kubelogin.md:1
+#, fuzzy
+msgid "# kubelogin 설치 및 설정"
+msgstr "kubelogin Installation and Configuration"
+
 #: src/kubelogin.md:3
-msgid "kubelogin 설치"
+#, fuzzy
+msgid "## kubelogin 설치"
 msgstr "kubelogin Installation"
 
 #: src/kubelogin.md:5
@@ -370,9 +327,10 @@ msgid ""
 "다. SNUCSE ID 계정을 통해 서버에 접근하려면 `kubelogin`이라는 `kubectl` 플러"
 "그인이 필요합니다. 아래 링크를 참고하여 `kubelogin`을 설치해주시기 바랍니다."
 msgstr ""
-"SNUCSE GPU Service operates in conjunction with SNUCSE ID <https://id.snucse.org/>. 
-To access the server with your SNUCSE ID account, you need a `kubectl` plugin called `kubelogin`. 
-Please refer to the link below and install `kubelogin`."
+"SNUCSE GPU Service operates in conjunction with SNUCSE ID <https://id.snucse."
+"org/>. To access the server with your SNUCSE ID account, you need a "
+"`kubectl` plugin called `kubelogin`. Please refer to the link below and "
+"install `kubelogin`."
 
 #: src/kubelogin.md:7
 msgid "<https://github.com/int128/kubelogin>"
@@ -385,17 +343,19 @@ msgid ""
 "경에서는 `Krew`를 통한 설치를 권장합니다. `Krew`의 설치 매뉴얼 링크는 아래와 "
 "같습니다."
 msgstr ""
-"According to the manual in the link, you can install it via `Homebrew`, `Krew`, or `Chocolatey`. 
-If you don't have these package managers, additional installation is required. 
-In a typical Linux environment, installation via `Krew` is recommended. 
-The installation manual link for `Krew` is provided below."
+"According to the manual in the link, you can install it via `Homebrew`, "
+"`Krew`, or `Chocolatey`. If you don't have these package managers, "
+"additional installation is required. In a typical Linux environment, "
+"installation via `Krew` is recommended. The installation manual link for "
+"`Krew` is provided below."
 
 #: src/kubelogin.md:11
 msgid "<https://krew.sigs.k8s.io/docs/user-guide/setup/install/>"
 msgstr "<https://krew.sigs.k8s.io/docs/user-guide/setup/install/>"
 
 #: src/kubelogin.md:13
-msgid "유저 등록"
+#, fuzzy
+msgid "## 유저 등록"
 msgstr "User Registration"
 
 #: src/kubelogin.md:15
@@ -403,8 +363,8 @@ msgid ""
 "SNUCSE ID를 서버 접근을 위한 유저로 등록해야 합니다. 명령어는 다음과 같습니"
 "다. 유저를 원하는 이름으로 붙일 수 있습니다. (아래 예시에서 `oidc`)"
 msgstr ""
-"You must register SNUCSE ID as a user for server access. The command is as follows. 
-You can name the user as you wish (e.g., oidc in the example below)."
+"You must register SNUCSE ID as a user for server access. The command is as "
+"follows. You can name the user as you wish (e.g., oidc in the example below)."
 
 #: src/kubelogin.md:17
 msgid ""
@@ -430,8 +390,14 @@ msgstr ""
 "  --exec-arg=--oidc-client-secret=kubernetes-oidc\n"
 "```"
 
+#: src/context.md:1
+#, fuzzy
+msgid "# 컨텍스트 설정 및 테스트"
+msgstr "Context Configuration and Test"
+
 #: src/context.md:3
-msgid "컨텍스트 등록"
+#, fuzzy
+msgid "## 컨텍스트 등록"
 msgstr "Context Registration"
 
 #: src/context.md:5
@@ -444,19 +410,24 @@ msgid ""
 "으면 가입을 먼저 해주시기 바랍니다. 이전에 `kubectl config set-credentials`에"
 "서 등록한 유저 (e.g. `oidc`)와 혼동하지 않도록 주의합니다."
 msgstr ""
-"After registering the cluster and user through the previous steps, you now link the two by registering them as a context. 
-At this point, you must specify a namespace. In connection with the SNUCSE ID, specific users are restricted to work only within the namespace corresponding to their username. 
-Therefore, you need to set your username from SNUCSE ID as the namespace. You can check your SNUCSE ID username by logging in at <https://id.snucse.org/>. 
-If you don't have a SNUCSE ID account, please sign up first. 
-Be careful not to confuse this with the user you registered previously using the `kubectl config set-credentials` command (e.g., `oidc`)."
+"After registering the cluster and user through the previous steps, you now "
+"link the two by registering them as a context. At this point, you must "
+"specify a namespace. In connection with the SNUCSE ID, specific users are "
+"restricted to work only within the namespace corresponding to their "
+"username. Therefore, you need to set your username from SNUCSE ID as the "
+"namespace. You can check your SNUCSE ID username by logging in at <https://"
+"id.snucse.org/>. If you don't have a SNUCSE ID account, please sign up "
+"first. Be careful not to confuse this with the user you registered "
+"previously using the `kubectl config set-credentials` command (e.g., `oidc`)."
 
 #: src/context.md:7
 msgid ""
 "아래는 클러스터가 `bentley`, 유저가 `oidc`, SNUCSE ID 유저명이 `bacchus`일 "
 "때 컨텍스트를 `bentley-oidc`로 등록하는 예시입니다."
 msgstr ""
-"The example below shows how to register the context as `bentley-oidc` when the cluster is named `bentley`, 
-the user is `oidc`, and the SNUCSE ID username is `bacchus`."
+"The example below shows how to register the context as `bentley-oidc` when "
+"the cluster is named `bentley`, the user is `oidc`, and the SNUCSE ID "
+"username is `bacchus`."
 
 #: src/context.md:9
 msgid ""
@@ -475,7 +446,8 @@ msgstr ""
 "```"
 
 #: src/context.md:16
-msgid "컨텍스트 변경"
+#, fuzzy
+msgid "## 컨텍스트 변경"
 msgstr "Modifying Context"
 
 #: src/context.md:18
@@ -483,8 +455,8 @@ msgid ""
 "여러 서버들을 컨텍스트로 등록하여 이용할 수 있습니다. 이 경우 다음과 같은 방"
 "식으로 컨텍스트를 변경할 수 있습니다."
 msgstr ""
-"You can use multiple servers by registering them as contexts. 
-In such cases, you can change the context in the following way."
+"You can use multiple servers by registering them as contexts. In such cases, "
+"you can change the context in the following way."
 
 #: src/context.md:20
 msgid ""
@@ -494,17 +466,18 @@ msgid ""
 "```"
 msgstr ""
 "```sh\n"
-"# Possible when 'ferrari-oidc' is registered as a context"
-"$ kubectl config use-context ferrari-oidc\n"
+"# Possible when 'ferrari-oidc' is registered as a context$ kubectl config "
+"use-context ferrari-oidc\n"
 "```"
 
 #: src/context.md:25
-msgid "테스트"
-msgstr "Test"
+msgid "## 테스트"
+msgstr ""
 
 #: src/context.md:27
 msgid "다음 명령어를 통해 서버 접근 가능 여부를 확인할 수 있습니다."
-msgstr "You can check the server access availability through the following commands."
+msgstr ""
+"You can check the server access availability through the following commands."
 
 #: src/context.md:29
 msgid ""
@@ -543,11 +516,17 @@ msgid ""
 "해당 명령어를 실행할 때 인증을 위해 SNUCSE ID 로그인 창이 켜질 수 있습니다. "
 "로그인 후 권한을 승인하면 됩니다."
 msgstr ""
-"When executing the command, the SNUCSE ID login window may pop up for authentication. "
-"After logging in, simply approve the permissions."
+"When executing the command, the SNUCSE ID login window may pop up for "
+"authentication. After logging in, simply approve the permissions."
+
+#: src/quota.md:1
+#, fuzzy
+msgid "# 리소스 쿼터 설정"
+msgstr "Resource Quota Configuration"
 
 #: src/quota.md:3
-msgid "부트스트랩 생성"
+#, fuzzy
+msgid "## 부트스트랩 생성"
 msgstr "Creating Bootstrap"
 
 #: src/quota.md:5
@@ -557,9 +536,11 @@ msgid ""
 "저 부트스트랩을 작성해야 합니다. SNUCSE ID 유저 이름이 `bacchus`라고 한다면, "
 "`ub.yaml`의 양식은 아래와 같습니다."
 msgstr ""
-"Even if you have access to the server, you may not be able to submit or execute tasks without a designated resource quota. "
-"To get a resource quota, you first need to create a user bootstrap on the desired server. Assuming the SNUCSE ID username is `bacchus`, "
-"the format for `ub.yaml` would be as follows."
+"Even if you have access to the server, you may not be able to submit or "
+"execute tasks without a designated resource quota. To get a resource quota, "
+"you first need to create a user bootstrap on the desired server. Assuming "
+"the SNUCSE ID username is `bacchus`, the format for `ub.yaml` would be as "
+"follows."
 
 #: src/quota.md:7
 msgid ""
@@ -614,32 +595,28 @@ msgstr ""
 "```"
 
 #: src/quota.md:30
-msgid "리소스 쿼터 신청"
+#, fuzzy
+msgid "## 리소스 쿼터 신청"
 msgstr "Request Resource Quota"
 
 #: src/quota.md:32
 msgid "리소스 종류는 다음과 같습니다. (ephemeral-storage 추후 제한 예정)"
-msgstr "The types of resources are as follows. (ephemeral-storage will be limited in the future.)"
+msgstr ""
+"The types of resources are as follows. (ephemeral-storage will be limited in "
+"the future.)"
 
 #: src/quota.md:33
-msgid "cpu"
-msgstr "cpu"
-
-#: src/quota.md:34
-msgid "memory"
-msgstr "memory"
-
-#: src/quota.md:35
-msgid "gpu"
-msgstr "gpu"
-
-#: src/quota.md:36
-msgid "storage"
-msgstr "storage"
+msgid ""
+"- cpu\n"
+"- memory\n"
+"- gpu\n"
+"- storage"
+msgstr ""
 
 #: src/quota.md:38
 msgid "아래 구글 폼을 통해 필요한 리소스 쿼터 요청을 작성하여 제출합니다."
-msgstr "Please fill out the Google form for the resource quota request and submit it."
+msgstr ""
+"Please fill out the Google form for the resource quota request and submit it."
 
 #: src/quota.md:41
 msgid ""
@@ -656,8 +633,9 @@ msgid ""
 "바쿠스에서 검토 후 승인 또는 거부를 하게 됩니다. 승인될 시 리소스 쿼터가 부여"
 "되며 아래 명령어를 통해 확인할 수 있습니다."
 msgstr ""
-"Bacchus will review and either approve or deny the request. 
-Once approved, the resource quota will be assigned to you, and you can check it by using the command below."
+"Bacchus will review and either approve or deny the request. Once approved, "
+"the resource quota will be assigned to you, and you can check it by using "
+"the command below."
 
 #: src/quota.md:45
 msgid ""
@@ -678,11 +656,18 @@ msgid ""
 "리소스 쿼터 변경이 필요할 경우 구글 폼을 통해 다시 신청할 수 있으며, 여러 제"
 "출 중 승인된 가장 마지막 제출을 기준으로 리소스 쿼터가 설정됩니다."
 msgstr ""
-"If you need to change the resource quota, you can reapply it, 
-and the resource quota will be set based on the most recent submission that has been approved."
+"If you need to change the resource quota, you can reapply it, and the "
+"resource quota will be set based on the most recent submission that has been "
+"approved."
+
+#: src/container.md:1
+#, fuzzy
+msgid "# 컨테이너 실행"
+msgstr "Container Execution"
 
 #: src/container.md:3
-msgid "YAML 파일 작성"
+#, fuzzy
+msgid "## YAML 파일 작성"
 msgstr "Writing YAML Files"
 
 #: src/container.md:5
@@ -692,9 +677,11 @@ msgid ""
 "당량 초과 시 실행되지 않습니다. 다음은 nginx를 실행하는 `nginx-pod.yaml` 파"
 "일 예시입니다."
 msgstr ""
-"In order to run a container, you first need to write a YAML file that describes which image and how many resources to be used. 
-It's mandatory to request CPU and memory resources. If your request exceeds the quota, the container will not work. 
-Here is an example of nginx-pod.yaml file that runs nginx."
+"In order to run a container, you first need to write a YAML file that "
+"describes which image and how many resources to be used. It's mandatory to "
+"request CPU and memory resources. If your request exceeds the quota, the "
+"container will not work. Here is an example of nginx-pod.yaml file that runs "
+"nginx."
 
 #: src/container.md:7
 msgid ""
@@ -744,9 +731,11 @@ msgid ""
 "실행할 수 있습니다. 자세한 건 사항은 <https://kubernetes.io/docs/concepts/"
 "workloads/>를 참고하시기 바랍니다."
 msgstr ""
-"The example above describes a Pod that pulls nginx:latest image, executes `echo \"Hello, world!\"` command, and then terminates. 
-Not only Pods but also Deployments, StatefulSets, Jobs, and various other Kubernetes workloads can be written and executed.
-For more details, please refer to <https://kubernetes.io/docs/concepts/workloads/>."
+"The example above describes a Pod that pulls nginx:latest image, executes "
+"`echo \"Hello, world!\"` command, and then terminates. Not only Pods but "
+"also Deployments, StatefulSets, Jobs, and various other Kubernetes workloads "
+"can be written and executed. For more details, please refer to <https://"
+"kubernetes.io/docs/concepts/workloads/>."
 
 #: src/container.md:28
 msgid ""
@@ -756,13 +745,15 @@ msgid ""
 "`requests`와 `limits`를 둘 다 적어주셔야 합니다. Quota에 대한 내용은 [이 문"
 "서](./quota.md)를 확인해주시길 바랍니다."
 msgstr ""
-"Please note that by default, resource quota is applied to all users. 
-Therefore, you need to specify the resources you would request accurately. 
-Since both request and limit are restricted by the quota, you should either write only `limits` as in the above example or specify both `requests` and `limits`. 
-For more details, please refer to this document(./quota.md)."
+"Please note that by default, resource quota is applied to all users. "
+"Therefore, you need to specify the resources you would request accurately. "
+"Since both request and limit are restricted by the quota, you should either "
+"write only `limits` as in the above example or specify both `requests` and "
+"`limits`. For more details, please refer to this document(./quota.md)."
 
 #: src/container.md:30
-msgid "실행 및 확인"
+#, fuzzy
+msgid "## 실행 및 확인"
 msgstr "Execution and Verification"
 
 #: src/container.md:32
@@ -771,9 +762,10 @@ msgid ""
 "logs`를 통해 얻을 수 있으며 워크로드의 상태는 `kubectl describe`로 확인할 수 "
 "있습니다. 실행이 끝난 워크로드는 `kubectl delete`를 통해 삭제할 수 있습니다."
 msgstr ""
-"You can run the workload using `kubectl apply`. 
-You can obtain the results through `kubectl logs`, and the status of the workload can be checked with `kubectl describe`. 
-Completed workloads can be deleted using `kubectl delete`."
+"You can run the workload using `kubectl apply`. You can obtain the results "
+"through `kubectl logs`, and the status of the workload can be checked with "
+"`kubectl describe`. Completed workloads can be deleted using `kubectl "
+"delete`."
 
 #: src/container.md:34
 msgid ""
@@ -803,7 +795,6 @@ msgstr ""
 msgid "실행 중인 컨테이너를 아래와 같은 명령어로 접속할 수 있습니다."
 msgstr "You can access the running container using the command below."
 
-
 #: src/container.md:49
 msgid ""
 "```sh\n"
@@ -823,13 +814,14 @@ msgid ""
 "버를 띄워두고 port-forwarding을 통해 접속하는 것 역시 금지입니다.** 파이썬 스"
 "크립트로 변환 후 제출하는 방식으로 부탁드립니다."
 msgstr ""
-"However, you should never misuse this by **allocating GPU resources 
-and then submitting a command with an infinite loop, followed by directly accessing the container for coding and experiments.**
-It's because this may cause resource monopolization without actually utilizing them. 
-Such actions are strictly prohibited, and Bacchus continuously monitors them. 
-Setting up servers like **Jupyter Notebook and accessing them via port-forwarding is also not allowed.**
-We kindly ask you to convert it to a Python script before the submission."
-
+"However, you should never misuse this by **allocating GPU resources and then "
+"submitting a command with an infinite loop, followed by directly accessing "
+"the container for coding and experiments.** It's because this may cause "
+"resource monopolization without actually utilizing them. Such actions are "
+"strictly prohibited, and Bacchus continuously monitors them. Setting up "
+"servers like **Jupyter Notebook and accessing them via port-forwarding is "
+"also not allowed.** We kindly ask you to convert it to a Python script "
+"before the submission."
 
 #: src/container.md:55
 msgid ""
@@ -838,10 +830,16 @@ msgid ""
 "위해 많은 기능들을 자유롭게 열어두었으니 여러분의 양심에 맡깁니다. 바람직한 "
 "사용법은 워크플로우 예시 부분에서 확인할 수 있습니다."
 msgstr ""
-"However, there are exceptional cases that are inevitable where one might allocate a few vCPUs without GPU resources, 
-set up a persistent volume, and then delete the Pod. 
-We provide a wide range of functionalities for flexible use so it's on your conscience. 
-You can find the proper way to use the servers in workflow example section."
+"However, there are exceptional cases that are inevitable where one might "
+"allocate a few vCPUs without GPU resources, set up a persistent volume, and "
+"then delete the Pod. We provide a wide range of functionalities for flexible "
+"use so it's on your conscience. You can find the proper way to use the "
+"servers in workflow example section."
+
+#: src/volume.md:1
+#, fuzzy
+msgid "# 퍼시스턴트 볼륨 설정"
+msgstr "Persistent Volume Configuration"
 
 #: src/volume.md:3
 msgid ""
@@ -852,11 +850,13 @@ msgid ""
 "이 퍼시스턴트 볼륨의 일부를 사용할수 있습니다. 다음 예시 `nginx-pvc.yaml`는 "
 "30GiB의 퍼시스턴트 볼륨 클레임을 생성하는 예시입니다."
 msgstr ""
-"Data or log files inside the container internal storage are stored in the ephemeral-storage. 
-This temporary storage is deleted along with the container, making it unsuitable for storing datasets or execution results. 
-Therefore, SNUCSE GPU service provides an additional ZFS-based persistent volume. 
-You can use part of this persistent volume through a persistent volume claim. 
-The following example `nginx-pvc.yaml` creates a 30GiB persistent volume claim."
+"Data or log files inside the container internal storage are stored in the "
+"ephemeral-storage. This temporary storage is deleted along with the "
+"container, making it unsuitable for storing datasets or execution results. "
+"Therefore, SNUCSE GPU service provides an additional ZFS-based persistent "
+"volume. You can use part of this persistent volume through a persistent "
+"volume claim. The following example `nginx-pvc.yaml` creates a 30GiB "
+"persistent volume claim."
 
 #: src/volume.md:5
 msgid ""
@@ -905,7 +905,8 @@ msgid ""
 "아래는 생성한 퍼시스턴트 볼륨 클레임을 통해 볼륨을 `/dataset`에 마운트하는 예"
 "시입니다."
 msgstr ""
-"The following is an example of a volume mounted on `/dataset` by using the claim."
+"The following is an example of a volume mounted on `/dataset` by using the "
+"claim."
 
 #: src/volume.md:26
 msgid ""
@@ -966,14 +967,21 @@ msgid ""
 "`/dataset` 경로에 데이터셋 및 결과를 저장하면 컨테이너 삭제 후에도 데이터가 "
 "보존됩니다."
 msgstr ""
-"Data and results saved inside `/dataset` path are preserved even after the container is deleted."
+"Data and results saved inside `/dataset` path are preserved even after the "
+"container is deleted."
+
+#: src/registry.md:1
+#, fuzzy
+msgid "# 이미지 레지스트리 이용"
+msgstr "Using Image Registry"
 
 #: src/registry.md:3
 msgid ""
 "사용하실 개인 이미지 레지스트리가 없으신 유저분들을 위해서 Bacchus는 레지스트"
 "리를 각 GPU 노드에서 제공합니다."
 msgstr ""
-"For users who do not have a personal image registry to be used, Bacchus provides a registry on each GPU node."
+"For users who do not have a personal image registry to be used, Bacchus "
+"provides a registry on each GPU node."
 
 #: src/registry.md:7
 msgid ""
@@ -982,9 +990,10 @@ msgid ""
 "어서 사용하시길 바랍니다.** 각 Project는 기본적으로 30GB의 스토리지 Quota를 "
 "가지고 있습니다."
 msgstr ""
-"Currently, there is no limit to the number of projects you can create. 
-Since it is the service for all, **we kindly request you to create and use only one project per each user.** 
-Each project has a 30GB of storage quota as a default."
+"Currently, there is no limit to the number of projects you can create. Since "
+"it is the service for all, **we kindly request you to create and use only "
+"one project per each user.** Each project has a 30GB of storage quota as a "
+"default."
 
 #: src/registry.md:9
 msgid ""
@@ -992,11 +1001,13 @@ msgid ""
 "부족해지는 경우가 생기게 된다면, 그 유저의 Project들은 예고 없이 삭제될 수 있"
 "고, 향후 GPU 서비스의 이용이 제한될 예정입니다."
 msgstr ""
-"If a user indiscriminately creates multiple projects to cause lack of space that others need, 
-these projects may be deleted without notice, and we may restrict the user not to access the GPU service in the future."
+"If a user indiscriminately creates multiple projects to cause lack of space "
+"that others need, these projects may be deleted without notice, and we may "
+"restrict the user not to access the GPU service in the future."
 
 #: src/registry.md:11
-msgid "제공 중인 레지스트리"
+#, fuzzy
+msgid "## 제공 중인 레지스트리"
 msgstr "Registry List"
 
 #: src/registry.md:13
@@ -1004,37 +1015,36 @@ msgid "현재 제공되고 있는 레지스트리는 다음과 같습니다."
 msgstr "The registries being provided are as follows."
 
 #: src/registry.md:15
-msgid "[ferrari](https://registry.ferrari.snucse.org:30443/)"
+#, fuzzy
+msgid ""
+"* [ferrari](https://registry.ferrari.snucse.org:30443/)\n"
+"* [bentley](https://registry.bentley.snucse.org:30443/)"
 msgstr "[ferrari](https://registry.ferrari.snucse.org:30443/)"
 
-#: src/registry.md:16
-msgid "[bentley](https://registry.bentley.snucse.org:30443/)"
-msgstr "[bentley](https://registry.bentley.snucse.org:30443/)"
-
 #: src/registry.md:18
-msgid "이용 방법"
+#, fuzzy
+msgid "## 이용 방법"
 msgstr "How to Use"
 
 #: src/registry.md:20
-msgid "프로젝트 생성"
+#, fuzzy
+msgid "### 프로젝트 생성"
 msgstr "Creating Project"
 
 #: src/registry.md:22
+#, fuzzy
 msgid ""
-"이용하고 싶은 레지스트리의 URL에 접속하고, `LOGIN VIA OIDC PROVIDER` 버튼을 "
-"통해서 로그인합니다."
+"1. 이용하고 싶은 레지스트리의 URL에 접속하고, `LOGIN VIA OIDC PROVIDER` 버튼"
+"을 통해서 로그인합니다.\n"
+"1. 좌측의 `Projects` 탭으로 이동하고, `New Project` 버튼을 눌러서 새로운 프로"
+"젝트를 생성합니다."
 msgstr ""
-"Visit the URL of the registry you wish to use and log in by clicking `LOGIN VIA OIDC PROVIDER` button."
-
-#: src/registry.md:23
-msgid ""
-"좌측의 `Projects` 탭으로 이동하고, `New Project` 버튼을 눌러서 새로운 프로젝"
-"트를 생성합니다."
-msgstr ""
-"Navigate to the `Projects` tab on the left and click the `New Project` button to create a new project."
+"Visit the URL of the registry you wish to use and log in by clicking `LOGIN "
+"VIA OIDC PROVIDER` button."
 
 #: src/registry.md:25
-msgid "레지스트리 로그인"
+#, fuzzy
+msgid "### 레지스트리 로그인"
 msgstr "Registry Login"
 
 #: src/registry.md:27
@@ -1042,35 +1052,33 @@ msgid ""
 "기본적으로 다른 이미지 레지스트리를 사용하는 방법과 같습니다. 이 경우 CLI에"
 "서 로그인을 해야하는데, 이 때 사용되는 Credential은 다음과 같습니다."
 msgstr ""
-"It's basically the same as any other image registries. 
-You need to log in via CLI, and the credentials to be used are as follows."
+"It's basically the same as any other image registries. You need to log in "
+"via CLI, and the credentials to be used are as follows."
 
 #: src/registry.md:29
-msgid "`Username`: ID username"
+#, fuzzy
+msgid ""
+"* `Username`: ID username\n"
+"* `Password`: CLI secret"
 msgstr "`Username`: ID username"
-
-#: src/registry.md:30
-msgid "`Password`: CLI secret"
-msgstr "`Password`: CLI secret"
 
 #: src/registry.md:32
 msgid "`CLI secret`을 얻기 위해서는 다음을 따릅니다."
 msgstr "Do the following to get `CLI secret`."
 
 #: src/registry.md:34
-msgid "우측 상단의 버튼에서 `User Profile`을 누릅니다."
-msgstr "Click `User Profile` button on the upper right corner."
-
-#: src/registry.md:35
+#, fuzzy
 msgid ""
-"CLI Secret 란의 오른쪽에 있는 Copy 버튼을 눌러서 클립보드에 시크릿을 복사합니"
-"다."
+"1. 우측 상단의 버튼에서 `User Profile`을 누릅니다.\n"
+"1. CLI Secret 란의 오른쪽에 있는 Copy 버튼을 눌러서 클립보드에 시크릿을 복사"
+"합니다."
 msgstr ""
-"Click the `Copy` button on the right side of the `CLI Secret` section to copy the secret to your clipboard."
+"Click the `Copy` button on the right side of the `CLI Secret` section to "
+"copy the secret to your clipboard."
 
 #: src/registry.md:37
 msgid "이후, CLI에서 다음과 같이 로그인합니다."
-msgstr  "Afterwards, log in as follows via CLI."
+msgstr "Afterwards, log in as follows via CLI."
 
 #: src/registry.md:39
 msgid ""
@@ -1083,23 +1091,29 @@ msgid ""
 "```"
 msgstr ""
 "```sh\n"
-"# The URL will change depending on the registry you use. 
-In this example, we use the registry of ferrari.\n"
+"# The URL will change depending on the registry you use. In this example, we "
+"use the registry of ferrari.\n"
 "docker login https://registry.ferrari.snucse.org:30443/\n"
 "\n"
 "# Then, enter the username and password in the prompt.\n"
 "```"
+
+#: src/example.md:1
+#, fuzzy
+msgid "# 워크플로우 예시"
+msgstr "Workflow Examples"
 
 #: src/example.md:3
 msgid ""
 "모델 사이즈가 263.9GiB인 Llama-2-70b 모델을 80GB HBM2E A100이 8장 있는 "
 "ferrari 서버에 올리는 예시를 들어겠습니다."
 msgstr ""
-"This is an example of inferencing with 263.9GiB of Llama-2-70b model 
-onto the ferrari server which has eight 80GB HBM2E A100s."
+"This is an example of inferencing with 263.9GiB of Llama-2-70b model onto "
+"the ferrari server which has eight 80GB HBM2E A100s."
 
 #: src/example.md:5
-msgid "퍼시스턴트 볼륨 클레임 생성"
+#, fuzzy
+msgid "## 퍼시스턴트 볼륨 클레임 생성"
 msgstr "Creating a Persistent Volume Claim"
 
 #: src/example.md:7
@@ -1107,8 +1121,8 @@ msgid ""
 "먼저 충분한 자원 할당량이 있는지 확인합니다. 아래의 경우는 테스트를 위해 할당"
 "량을 매우 크게 잡은 상태입니다."
 msgstr ""
-"First, check if you have a sufficient resource quota. 
-In the following case, quota is set very large for the test."
+"First, check if you have a sufficient resource quota. In the following case, "
+"quota is set very large for the test."
 
 #: src/example.md:9
 msgid ""
@@ -1131,8 +1145,8 @@ msgid ""
 "모델이 들어가기에 충분하도록 300GB의 퍼시스턴트 볼륨 클레임, `llama-2-70b-"
 "pvc.yaml`을 먼저 생성하겠습니다."
 msgstr ""
-"First, to ensure enough space for the model to fit in,
-we create a 300GB persistent volume claim named `llama-2-70b-pvc.yaml`."
+"First, to ensure enough space for the model to fit in, we create a 300GB "
+"persistent volume claim named `llama-2-70b-pvc.yaml`."
 
 #: src/example.md:17
 msgid ""
@@ -1177,7 +1191,8 @@ msgstr ""
 "```"
 
 #: src/example.md:36
-msgid "이미지 빌드"
+#, fuzzy
+msgid "## 이미지 빌드"
 msgstr "Build Image"
 
 #: src/example.md:38
@@ -1187,10 +1202,10 @@ msgid ""
 "에서 어떠한 방식으로 빌드해도 상관이 없지만 예시에서는 로컬에서 Dockerfile을 "
 "작성하여 빌드했습니다. 아래는 빌드에 사용된 Dockerfile입니다."
 msgstr ""
-"Llama 2 utilizes Pytorch and CUDA. 
-We use `nvcr.io/nvidia/pytorch:23.06-py3` image as a base where these packages are already installed. 
-You can build the image from anywhere in any methods, but we use Dockerfile in this example. 
-Here is the Dockerfile."
+"Llama 2 utilizes Pytorch and CUDA. We use `nvcr.io/nvidia/pytorch:23.06-py3` "
+"image as a base where these packages are already installed. You can build "
+"the image from anywhere in any methods, but we use Dockerfile in this "
+"example. Here is the Dockerfile."
 
 #: src/example.md:40
 msgid ""
@@ -1223,10 +1238,10 @@ msgid ""
 "장되므로 컨테이너 실행 시 이미지를 고속으로 pull할 수 있습니다. Harbor에 올려"
 "서 사용하는 시나리오를 예로 들겠습니다."
 msgstr ""
-"You can store the built image locally or in the provided Harbor registry. 
-If you use the provided registry, the image is stored in the server's local storage, 
-enabling fast image pulls when executing containers. 
-We will use the scenario of uploading the image to Harbor and using it."
+"You can store the built image locally or in the provided Harbor registry. If "
+"you use the provided registry, the image is stored in the server's local "
+"storage, enabling fast image pulls when executing containers. We will use "
+"the scenario of uploading the image to Harbor and using it."
 
 #: src/example.md:53
 msgid ""
@@ -1239,14 +1254,16 @@ msgid ""
 "```"
 msgstr ""
 "```sh\n"
-"# assume there is a project named bacchus inside https://registry.ferrari.snucse.org:30443\n"
+"# assume there is a project named bacchus inside https://registry.ferrari."
+"snucse.org:30443\n"
 "$ docker build -t registry.ferrari.snucse.org:30443/bacchus/llama:latest - < "
 "Dockerfile\n"
 "$ docker push registry.ferrari.snucse.org:30443/bacchus/llama:latest\n"
 "```"
 
 #: src/example.md:59
-msgid "모델 파라미터 다운로드"
+#, fuzzy
+msgid "## 모델 파라미터 다운로드"
 msgstr "Download Pretrained Model Weights"
 
 #: src/example.md:61
@@ -1322,7 +1339,8 @@ msgid ""
 "위 예시에서 `URL_FROM_EMAIL`을 채워넣은 후 실행하여 퍼시스턴트 볼륨에 모델 파"
 "라미터를 다운로드합니다."
 msgstr ""
-"Fill in `URL_FROM_EMAIL` and execute it to download the model weights to the persistent volume."
+"Fill in `URL_FROM_EMAIL` and execute it to download the model weights to the "
+"persistent volume."
 
 #: src/example.md:95
 msgid ""
@@ -1340,7 +1358,8 @@ msgstr ""
 msgid ""
 "다운로드가 완료되면 완료된 pod을 지우고 실제 실험 컨테이너를 실행합니다."
 msgstr ""
-"Once the download is complete, delete the completed pod and run the actual experiment container."
+"Once the download is complete, delete the completed pod and run the actual "
+"experiment container."
 
 #: src/example.md:102
 msgid ""
@@ -1355,12 +1374,15 @@ msgstr ""
 "```"
 
 #: src/example.md:107
+#, fuzzy
 msgid ""
 "위와 같이 데이터셋 및 모델 weight를 준비할 때 소수의 CPU만 할당하여 준비하시"
-"기 바랍니다. 스크립트를 한번에 짜서 준비하는 게 어려울 경우"
+"기 바랍니다.\n"
+"스크립트를 한번에 짜서 준비하는 게 어려울 경우"
 msgstr ""
-"When preparing for datasets and model weights as mentioned above, please allocate only a small number of CPUs. 
-If you find it difficult to prepare everything in one script,"
+"When preparing for datasets and model weights as mentioned above, please "
+"allocate only a small number of CPUs. If you find it difficult to prepare "
+"everything in one script,"
 
 #: src/example.md:110
 msgid ""
@@ -1375,16 +1397,19 @@ msgstr ""
 "```"
 
 #: src/example.md:115
+#, fuzzy
 msgid ""
 "와 같이 무한루프를 제출하고 `kubectl exec`으로 접속하여 퍼시스턴트 볼륨 내 데"
-"이터를 준비할 수 있습니다. 세팅이 끝나면 반드시 해당 pod을 삭제해주시기 바랍"
-"니다."
+"이터를 준비할 수 있습니다.\n"
+"세팅이 끝나면 반드시 해당 pod을 삭제해주시기 바랍니다."
 msgstr ""
-"you can submit an infinite loop and access via `kubectl exec` to prepare data within the pod like the above. 
-Once the setup is complete, please make sure to delete the corresponding pod."
+"you can submit an infinite loop and access via `kubectl exec` to prepare "
+"data within the pod like the above. Once the setup is complete, please make "
+"sure to delete the corresponding pod."
 
 #: src/example.md:118
-msgid "테스트 실행"
+#, fuzzy
+msgid "## 테스트 실행"
 msgstr "Test"
 
 #: src/example.md:120
@@ -1466,8 +1491,8 @@ msgstr ""
 "```"
 
 #: src/example.md:155
-msgid "기타"
-msgstr "Others"
+msgid "## 기타"
+msgstr ""
 
 #: src/example.md:157
 msgid ""
@@ -1480,14 +1505,17 @@ msgid ""
 "빌드해주시기 바랍니다. 소스코드를 Github에 올린 후 Github Action과 Github "
 "Packages를 이용하여 이미지를 자동 빌드하는 방법도 좋습니다. "
 msgstr ""
-"When you modify the source codes or need to install additional packages, 
-you must rebuild the image and push it to the registry. 
-You can build the image by writing a Dockerfile or using the docker commit command. 
-Due to the characteristics of research, there are often cases where you need to repeatedly execute programs right after modifying the source codes. 
-If you build without considering the caching of image layers, you may transfer a large amount of data every time, 
-which makes cycle between code modification and execution longer. 
-Therefore, it's crucial to optimize the caching of image layers during builds. 
-If you manage your source codes on Github, using Github Action and Packages are the good choices to automate the image build and deployment."
+"When you modify the source codes or need to install additional packages, you "
+"must rebuild the image and push it to the registry. You can build the image "
+"by writing a Dockerfile or using the docker commit command. Due to the "
+"characteristics of research, there are often cases where you need to "
+"repeatedly execute programs right after modifying the source codes. If you "
+"build without considering the caching of image layers, you may transfer a "
+"large amount of data every time, which makes cycle between code modification "
+"and execution longer. Therefore, it's crucial to optimize the caching of "
+"image layers during builds. If you manage your source codes on Github, using "
+"Github Action and Packages are the good choices to automate the image build "
+"and deployment."
 
 #: src/example.md:159
 msgid ""
@@ -1496,17 +1524,22 @@ msgid ""
 "하므로 무한루프를 걸어 소수의 vCPU와 함께 Pod을 띄운 후 데이터를 주고 받으면 "
 "됩니다."
 msgstr ""
-"When you send files to or retrieve them from the persistent volume, 
-you can use `kubectl cp` (refer to `kubectl cp --help`). 
-To do this, the persistent volume must be attached to the pod. 
-Please launch the Pod with a few vCPUs and an infinite loop, then exchange the data."
+"When you send files to or retrieve them from the persistent volume, you can "
+"use `kubectl cp` (refer to `kubectl cp --help`). To do this, the persistent "
+"volume must be attached to the pod. Please launch the Pod with a few vCPUs "
+"and an infinite loop, then exchange the data."
+
+#: src/developers.md:1
+msgid "# 개발팀"
+msgstr ""
 
 #: src/developers.md:5
 msgid "팀장"
 msgstr "Team leader"
 
 #: src/developers.md:6
-msgid "**백우현** / 컴퓨터공학부 17"
+#, fuzzy
+msgid "- **백우현** / 컴퓨터공학부 17"
 msgstr "**백우현** / 컴퓨터공학부 17"
 
 #: src/developers.md:8
@@ -1514,61 +1547,219 @@ msgid "팀원"
 msgstr "Team members"
 
 #: src/developers.md:9
-msgid "**김무환** / 컴퓨터공학부 17"
-msgstr "**김무환** / 컴퓨터공학부 17"
-
-#: src/developers.md:10
-msgid "**김민준** / 수 리 과 학 부 23"
-msgstr "**김민준** / 수 리 과 학 부 23"
-
-#: src/developers.md:11
-msgid "**박재현** / 컴퓨터공학부 16"
-msgstr "**박재현** / 컴퓨터공학부 16"
-
-#: src/developers.md:12
-msgid "**박종훈** / 컴퓨터공학부 15"
-msgstr "**박종훈** / 컴퓨터공학부 15"
-
-#: src/developers.md:13
-msgid "**박찬우** / 경   영  학   과 17"
-msgstr **박찬우** / 경   영  학   과 17"
-
-#: src/developers.md:14
-msgid "**서지민** / 컴퓨터공학부 20"
-msgstr "**서지민** / 컴퓨터공학부 20"
-
-#: src/developers.md:15
-msgid "**성용운** / 컴퓨터공학부 17"
-msgstr "**성용운** / 컴퓨터공학부 17"
-
-#: src/developers.md:16
-msgid "**오평석** / 컴퓨터공학부 13"
-msgstr "**오평석** / 컴퓨터공학부 13"
-
-#: src/developers.md:17
-msgid "**오하나** / 자유전공학부 19"
-msgstr "**오하나** / 자유전공학부 19"
-
-#: src/developers.md:18
-msgid "**윤지학** / 컴퓨터공학부 16"
-msgstr "**윤지학** / 컴퓨터공학부 16"
-
-#: src/developers.md:19
-msgid "**이준혁** / 컴퓨터공학부 17"
-msgstr "**이준혁** / 컴퓨터공학부 17"
-
-#: src/developers.md:20
-msgid "**최원우** / 컴퓨터공학부 16"
-msgstr "**최원우** / 컴퓨터공학부 16"
+msgid ""
+"- **김무환** / 컴퓨터공학부 17\n"
+"- **김민준** / 수 리 과 학 부 23\n"
+"- **박재현** / 컴퓨터공학부 16\n"
+"- **박종훈** / 컴퓨터공학부 15\n"
+"- **박찬우** / 경 &nbsp;&nbsp;영 &nbsp;학 &nbsp;&nbsp;과 17\n"
+"- **서지민** / 컴퓨터공학부 20\n"
+"- **성용운** / 컴퓨터공학부 17\n"
+"- **오평석** / 컴퓨터공학부 13\n"
+"- **오하나** / 자유전공학부 19\n"
+"- **윤지학** / 컴퓨터공학부 16\n"
+"- **이준혁** / 컴퓨터공학부 17\n"
+"- **최원우** / 컴퓨터공학부 16"
+msgstr ""
 
 #: src/developers.md:22
 msgid "도움 주신 분들"
 msgstr "Acknowledgements"
 
 #: src/developers.md:23
-msgid "**이재욱** 교수님"
+#, fuzzy
+msgid ""
+"- **이재욱** 교수님\n"
+"- **전병곤** 교수님"
 msgstr "**이재욱** 교수님"
 
-#: src/developers.md:24
-msgid "**전병곤** 교수님"
-msgstr "**전병곤** 교수님"
+#~ msgid "서버명"
+#~ msgstr "Server name"
+
+#~ msgid "GPU"
+#~ msgstr "GPU"
+
+#~ msgid "vCPU"
+#~ msgstr "vCPU"
+
+#~ msgid "메모리"
+#~ msgstr "Memory"
+
+#~ msgid "GPU P2P"
+#~ msgstr "GPU P2P"
+
+#~ msgid "스토리지"
+#~ msgstr "Storage"
+
+#~ msgid "ferrari"
+#~ msgstr "ferrari"
+
+#~ msgid "(HGX A100)"
+#~ msgstr "(HGX A100)"
+
+#~ msgid "8 x A100"
+#~ msgstr "8 x A100"
+
+#~ msgid "(80GB HBM2E)"
+#~ msgstr "(80GB HBM2E)"
+
+#~ msgid "256"
+#~ msgstr "256"
+
+#~ msgid "1024GB"
+#~ msgstr "1024GB"
+
+#~ msgid "NVSwitch"
+#~ msgstr "NVSwitch"
+
+#~ msgid "7.68TB"
+#~ msgstr "7.68TB"
+
+#~ msgid "bentley"
+#~ msgstr "bentley"
+
+#~ msgid "(DGX A100)"
+#~ msgstr "(DGX A100)"
+
+#~ msgid "(40GB HBM2)"
+#~ msgstr "(40GB HBM2)"
+
+#~ msgid "15.36TB"
+#~ msgstr "15.36TB"
+
+#~ msgid "ford"
+#~ msgstr "ford"
+
+#~ msgid "4 x A100"
+#~ msgstr "4 x A100"
+
+#~ msgid "64"
+#~ msgstr "64"
+
+#~ msgid "768GB"
+#~ msgstr "768GB"
+
+#~ msgid "NVLink"
+#~ msgstr "NVLink"
+
+#~ msgid "주의"
+#~ msgstr "Notes"
+
+#~ msgid "대상"
+#~ msgstr "Those available"
+
+#~ msgid "학부생"
+#~ msgstr "Undergraduate students"
+
+#~ msgid "컴퓨터공학부 주전공생"
+#~ msgstr "Computer Science and Engineering major students"
+
+#~ msgid "자유전공학부 (컴퓨터공학 주전공) 학생"
+#~ msgstr ""
+#~ "Liberal Studies students (majoring in Computer Science and Engineering)"
+
+#~ msgid "컴퓨터공학부 복수/부전공생"
+#~ msgstr "Computer Science and Engineering (double/minor) students"
+
+#~ msgid "대학원생"
+#~ msgstr "Graduate students"
+
+#~ msgid "컴퓨터공학부 대학원생"
+#~ msgstr "Computer Science and Engineering graduate students"
+
+#~ msgid "협동과정 인공지능 소속 중 지도교수가 컴퓨터공학부 소속인 대학원생"
+#~ msgstr ""
+#~ "Graduate students in the interdisciplinary program in Artificial "
+#~ "Intelligence whose supervisor is affiliated with Department of Computer "
+#~ "Science and Engineering"
+
+#~ msgid "엔트리포인트"
+#~ msgstr "Entry point"
+
+#~ msgid "인증서"
+#~ msgstr "Certificate"
+
+#~ msgid "https://147.46.15.75:6443"
+#~ msgstr "https://147.46.15.75:6443"
+
+#~ msgid "[ferrari.crt](./materials/ferrari.crt)"
+#~ msgstr "[ferrari.crt](./materials/ferrari.crt)"
+
+#~ msgid "https://147.46.92.213:6443"
+#~ msgstr "https://147.46.92.213:6443"
+
+#~ msgid "[bentley.crt](./materials/bentley.crt)"
+#~ msgstr "[bentley.crt](./materials/bentley.crt)"
+
+#~ msgid "테스트"
+#~ msgstr "Test"
+
+#~ msgid "cpu"
+#~ msgstr "cpu"
+
+#~ msgid "memory"
+#~ msgstr "memory"
+
+#~ msgid "gpu"
+#~ msgstr "gpu"
+
+#~ msgid "storage"
+#~ msgstr "storage"
+
+#~ msgid "[bentley](https://registry.bentley.snucse.org:30443/)"
+#~ msgstr "[bentley](https://registry.bentley.snucse.org:30443/)"
+
+#~ msgid ""
+#~ "좌측의 `Projects` 탭으로 이동하고, `New Project` 버튼을 눌러서 새로운 프로"
+#~ "젝트를 생성합니다."
+#~ msgstr ""
+#~ "Navigate to the `Projects` tab on the left and click the `New Project` "
+#~ "button to create a new project."
+
+#~ msgid "`Password`: CLI secret"
+#~ msgstr "`Password`: CLI secret"
+
+#~ msgid "우측 상단의 버튼에서 `User Profile`을 누릅니다."
+#~ msgstr "Click `User Profile` button on the upper right corner."
+
+#~ msgid "기타"
+#~ msgstr "Others"
+
+#~ msgid "**김무환** / 컴퓨터공학부 17"
+#~ msgstr "**김무환** / 컴퓨터공학부 17"
+
+#~ msgid "**김민준** / 수 리 과 학 부 23"
+#~ msgstr "**김민준** / 수 리 과 학 부 23"
+
+#~ msgid "**박재현** / 컴퓨터공학부 16"
+#~ msgstr "**박재현** / 컴퓨터공학부 16"
+
+#~ msgid "**박종훈** / 컴퓨터공학부 15"
+#~ msgstr "**박종훈** / 컴퓨터공학부 15"
+
+#~ msgid "**박찬우** / 경   영  학   과 17"
+#~ msgstr "**박찬우** / 경   영  학   과 17"
+
+#~ msgid "**서지민** / 컴퓨터공학부 20"
+#~ msgstr "**서지민** / 컴퓨터공학부 20"
+
+#~ msgid "**성용운** / 컴퓨터공학부 17"
+#~ msgstr "**성용운** / 컴퓨터공학부 17"
+
+#~ msgid "**오평석** / 컴퓨터공학부 13"
+#~ msgstr "**오평석** / 컴퓨터공학부 13"
+
+#~ msgid "**오하나** / 자유전공학부 19"
+#~ msgstr "**오하나** / 자유전공학부 19"
+
+#~ msgid "**윤지학** / 컴퓨터공학부 16"
+#~ msgstr "**윤지학** / 컴퓨터공학부 16"
+
+#~ msgid "**이준혁** / 컴퓨터공학부 17"
+#~ msgstr "**이준혁** / 컴퓨터공학부 17"
+
+#~ msgid "**최원우** / 컴퓨터공학부 16"
+#~ msgstr "**최원우** / 컴퓨터공학부 16"
+
+#~ msgid "**전병곤** 교수님"
+#~ msgstr "**전병곤** 교수님"

@@ -8,6 +8,7 @@
 
 - [서버 목록](./servers.md)
 - [사용자 안내](./users.md)
+- [자원 회수](./resource_reclaim.md)
 
 # 서버 접근 방법
 

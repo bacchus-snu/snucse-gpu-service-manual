@@ -42,3 +42,41 @@ docker login https://registry.ferrari.snucse.org:30443/
 
 # 이후 prompt에서 물어보는 username과 password를 입력합니다.
 ```
+
+### Private Registry의 이미지를 Pod에서 사용하기
+
+Pod에서 Private 공개범위의 레지스트리를 이용하기 위해서는, Pod에게 이미지를 가져올 때 사용할 크레덴셜을 제공해줄 필요가 있습니다.
+
+다음과 같은 명령어로 `Secret` 리소스를 생성합니다. 여기서는 `ferrari`를 예시로 듭니다.
+
+```sh
+kubectl create secret docker-registry regcred \
+    --docker-server=registry.ferrari.snucse.org:30443 \
+    --docker-username='<ID Username>' \
+    --docker-password='<CLI Secret>'
+```
+
+`regcred` 라는 이름의 시크릿 리소스를 생성하고 나면, PodSpec에 `imagePullSecrets`를 다음과 같이 추가합니다. 여기서는 `alpine` 이미지를 예시로 듭니다.
+
+```sh
+apiVersion: v1
+kind: Pod
+metadata:
+  name: alpine
+spec:
+  containers:
+    - image: registry.ferrari.snucse.org:30443/<username>/alpine:latest
+      command:
+        - /bin/sh
+        - "-c"
+        - "sleep 60m"
+      imagePullPolicy: IfNotPresent
+      name: alpine
+      resources:
+        limits:
+          cpu: 100m
+          memory: 100Mi
+  imagePullSecrets:
+    - name: regcred
+  restartPolicy: Always
+```

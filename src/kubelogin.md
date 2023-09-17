@@ -12,7 +12,7 @@ SNUCSE GPU 서비스는 SNUCSE ID <https://id.snucse.org/>와 연동되어 운�
 
 ## 유저 등록
 
-SNUCSE ID를 서버 접근을 위한 유저로 등록해야 합니다. 명령어는 다음과 같습니다. 유저를 원하는 이름으로 붙일 수 있습니다. (아래 예시에서 `oidc`)
+SNUCSE ID를 서버 접근을 위한 유저로 등록해야 합니다. 명령어는 다음과 같습니다. 유저를 원하는 이름으로 붙일 수 있습니다. (e.g. `oidc`)
 
 ```sh
 $ kubectl config set-credentials oidc \

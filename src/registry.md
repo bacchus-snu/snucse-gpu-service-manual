@@ -38,7 +38,7 @@
 
 ```sh
 # 사용할 레지스트리에 따라서 URL은 바뀌게 됩니다. 여기서는 ferrari의 레지스트리를 예시로 들겠습니다.
-docker login https://registry.ferrari.snucse.org:30443/
+$ docker login https://registry.ferrari.snucse.org:30443/
 
 # 이후 prompt에서 물어보는 username과 password를 입력합니다.
 ```
@@ -50,7 +50,7 @@ Pod에서 Private 공개범위의 레지스트리를 이용하기 위해서는, 
 다음과 같은 명령어로 `Secret` 리소스를 생성합니다. 여기서는 `ferrari`를 예시로 듭니다.
 
 ```sh
-kubectl create secret docker-registry regcred \
+$ kubectl create secret docker-registry regcred \
     --docker-server=registry.ferrari.snucse.org:30443 \
     --docker-username='<ID Username>' \
     --docker-password='<CLI Secret>'

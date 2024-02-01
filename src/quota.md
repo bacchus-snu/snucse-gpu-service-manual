@@ -38,7 +38,7 @@ deadbeef   1m
 
 [구글 폼](https://docs.google.com/forms/d/e/1FAIpQLSeC3KTu0ofDaSUTZEJKsEGjTLMgupENkLxR9aVQ2LanA1Spaw/viewform?usp=sf_link)을 통해 필요한 리소스 쿼터 요청을 작성하여 제출합니다.
 
-바쿠스에서 검토 후 승인 또는 거부를 하게 됩니다. 승인될 시 리소스 쿼터가 부여되며 아래 명령어를 통해 확인할 수 있습니다.
+바쿠스에서 검토 후 승인 또는 거부를 하게 됩니다. 보통 하루 안쪽으로 승인되며, 거부 시에는 이메일로 안내됩니다. 승인될 시 리소스 쿼터가 부여되며 아래 명령어를 통해 확인할 수 있습니다.
 
 ```sh
 $ kubectl get resourcequotas
